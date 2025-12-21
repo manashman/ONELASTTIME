@@ -48,7 +48,7 @@ export function VideosSection() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 place-items-center"
         >
-          {/* Instagram Video 1 */}
+          {/* Instagram Video */}
           <div className="w-full max-w-sm">
             <motion.div
               whileHover={{ scale: 1.02 }}

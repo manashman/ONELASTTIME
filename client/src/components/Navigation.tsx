@@ -46,15 +46,15 @@ export function Navigation() {
         animate={{ y: 0 }}
         transition={{ duration: 0.5 }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled 
-            ? "glass-strong border-b border-border/50" 
+          isScrolled
+            ? "glass-strong border-b border-border/50"
             : "bg-transparent"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
-            <motion.div 
+            <motion.div
               className="flex items-center gap-2"
               whileHover={{ scale: 1.02 }}
             >
@@ -62,7 +62,9 @@ export function Navigation() {
               <span className="font-display text-lg md:text-xl font-bold gradient-cosmic-text">
                 PRADHARSHINI
               </span>
-              <span className="font-display text-xs md:text-sm text-muted-foreground">25</span>
+              <span className="font-display text-xs md:text-sm text-muted-foreground">
+                26
+              </span>
             </motion.div>
 
             {/* Desktop Navigation */}
@@ -77,9 +79,14 @@ export function Navigation() {
                   {link.name}
                 </button>
               ))}
-              <Button 
+              <Button
                 className="ml-4 font-display text-xs tracking-wider"
-                onClick={() => window.open("https://drive.google.com/file/d/10d520nYkXtySwXjTiLEhFBtOwXx46arC/view?usp=sharing", "_blank")}
+                onClick={() =>
+                  window.open(
+                    "https://drive.google.com/file/d/10d520nYkXtySwXjTiLEhFBtOwXx46arC/view?usp=sharing",
+                    "_blank",
+                  )
+                }
                 data-testid="nav-rulebook-button"
               >
                 RULE BOOK
@@ -92,7 +99,11 @@ export function Navigation() {
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               data-testid="mobile-menu-button"
             >
-              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isMobileMenuOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
             </button>
           </div>
         </div>
@@ -127,9 +138,14 @@ export function Navigation() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
               >
-                <Button 
+                <Button
                   className="mt-4 font-display tracking-wider"
-                  onClick={() => window.open("https://drive.google.com/file/d/10d520nYkXtySwXjTiLEhFBtOwXx46arC/view?usp=sharing", "_blank")}
+                  onClick={() =>
+                    window.open(
+                      "https://drive.google.com/file/d/10d520nYkXtySwXjTiLEhFBtOwXx46arC/view?usp=sharing",
+                      "_blank",
+                    )
+                  }
                   data-testid="mobile-rulebook-button"
                 >
                   RULE BOOK
