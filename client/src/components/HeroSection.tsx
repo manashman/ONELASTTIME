@@ -29,7 +29,7 @@ export function HeroSection() {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden" onMouseMove={handleMouseMove}>
+    <section id="home" className="relative min-h-screen pt-20 md:pt-24 flex items-center justify-center overflow-hidden" onMouseMove={handleMouseMove}>
       {/* Interactive cursor glow */}
       <motion.div
         className="fixed w-80 h-80 rounded-full pointer-events-none opacity-20 blur-3xl"
