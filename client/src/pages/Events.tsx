@@ -44,11 +44,11 @@ const eventCategories = [
     icon: Music,
     description: "Battle of bands, solo performances, vocal competitions, and orchestral showcases across multiple eras of music.",
     events: [
-      { name: "Solo Singing" },
-      { name: "Duet Singing" },
-      { name: "Solo Instrumentals" },
-      { name: "Beatboxing" },
-      { name: "Battle of Bands" },
+      { name: "Solo Singing", formUrl: "https://forms.gle/FMiRkkLgGoBZKzxe8" },
+      { name: "Duet Singing", formUrl: "https://forms.gle/PRhAhFBcwnExyAsj8" },
+      { name: "Solo Instrumentals", formUrl: "https://forms.gle/7evBfNZvQBhfdNhx7" },
+      { name: "Beatboxing", formUrl: "https://forms.gle/NHWrBFiwCaXKHhqa8" },
+      { name: "Battle of Bands", formUrl: "https://forms.gle/nP6t7yHiGG96TtqP9" },
     ]
   },
   {
@@ -172,9 +172,24 @@ function EventCard({ category, index }: { category: typeof eventCategories[0]; i
             <h4 className="font-semibold text-foreground text-sm mb-3">Events in this Category:</h4>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
               {category.events.map((event, idx) => (
-                <div key={idx} className="flex items-center gap-2 p-2.5 rounded-lg bg-background/40 border border-border/30 hover:border-primary/30 transition-colors">
-                  <div className="w-2 h-2 rounded-full bg-primary flex-shrink-0" />
-                  <p className="font-medium text-foreground text-sm">{event.name}</p>
+                <div key={idx}>
+                  {(event as any).formUrl ? (
+                    <a 
+                      href={(event as any).formUrl} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 p-2.5 rounded-lg bg-background/40 border border-border/30 hover:border-primary/30 hover:bg-background/60 transition-colors cursor-pointer"
+                      data-testid={`event-form-link-${event.name.replace(/\s+/g, '-').toLowerCase()}`}
+                    >
+                      <div className="w-2 h-2 rounded-full bg-primary flex-shrink-0" />
+                      <p className="font-medium text-foreground text-sm">{event.name}</p>
+                    </a>
+                  ) : (
+                    <div className="flex items-center gap-2 p-2.5 rounded-lg bg-background/40 border border-border/30 hover:border-primary/30 transition-colors">
+                      <div className="w-2 h-2 rounded-full bg-primary flex-shrink-0" />
+                      <p className="font-medium text-foreground text-sm">{event.name}</p>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
