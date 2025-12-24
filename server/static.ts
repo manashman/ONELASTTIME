@@ -1,19 +1,20 @@
 import express, { type Express } from "express";
-import fs from "fs";
 import path from "path";
 
 export function serveStatic(app: Express) {
-  const distPath = path.resolve(__dirname, "public");
-  if (!fs.existsSync(distPath)) {
-    throw new Error(
-      `Could not find the build directory: ${distPath}, make sure to build the client first`,
-    );
-  }
+  // IMPORTANT: use process.cwd() in Vercel
+  const distPath = path.join(process.cwd(), "dist", "public");
 
-  app.use(express.static(distPath));
+  // Serve static assets (JS, CSS, images)
+  app.use(
+    express.static(distPath, {
+      index: false, // prevent auto index.html handling
+    }),
+  );
 
-  // fall through to index.html if the file doesn't exist
-  app.use("*", (_req, res) => {
-    res.sendFile(path.resolve(distPath, "index.html"));
+  // SPA fallback — always return index.html
+  app.get("*", (_req, res) => {
+    res.setHeader("Content-Type", "text/html");
+    res.sendFile(path.join(distPath, "index.html"));
   });
 }
