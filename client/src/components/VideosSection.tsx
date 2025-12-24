@@ -81,13 +81,24 @@ export function VideosSection() {
               whileHover={{ scale: 1.02 }}
               className="rounded-xl overflow-hidden glass border border-primary/20 hover:border-primary/50 transition-colors h-96 flex flex-col items-center justify-center gap-4 p-6 text-center cursor-pointer group"
             >
-              <Film className="w-12 h-12 text-primary/60 group-hover:text-primary transition-colors" />
-              <div>
-                <h3 className="font-semibold text-foreground mb-2">More Videos Coming Soon</h3>
-                <p className="text-sm text-muted-foreground">
-                  Follow @pradharshini.kmc on Instagram for exclusive content
-                </p>
-              </div>
+                <div className="flex items-center justify-center h-96 bg-background/50">
+                  <blockquote 
+                    className="instagram-media" 
+                    data-instgrm-permalink="https://www.instagram.com/reel/DRmboytDknt/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" 
+                    data-instgrm-version="14"
+                    style={{
+                      background: "transparent",
+                      border: "none",
+                      borderRadius: "3px",
+                      boxShadow: "none",
+                      display: "block",
+                      margin: "0",
+                      minWidth: "100%",
+                      padding: "0",
+                      width: "100%"
+                    }}
+                  />
+                </div>
             </motion.div>
           </div>
 
@@ -96,12 +107,23 @@ export function VideosSection() {
               whileHover={{ scale: 1.02 }}
               className="rounded-xl overflow-hidden glass border border-primary/20 hover:border-primary/50 transition-colors h-96 flex flex-col items-center justify-center gap-4 p-6 text-center cursor-pointer group"
             >
-              <Film className="w-12 h-12 text-primary/60 group-hover:text-primary transition-colors" />
-              <div>
-                <h3 className="font-semibold text-foreground mb-2">Behind the Scenes</h3>
-                <p className="text-sm text-muted-foreground">
-                  Stay tuned for exclusive backstage footage
-                </p>
+              <div className="flex items-center justify-center h-96 bg-background/50">
+                <blockquote 
+                  className="instagram-media" 
+                  data-instgrm-permalink="https://www.instagram.com/p/DSnJ7IqEpxp/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" 
+                  data-instgrm-version="14"
+                  style={{
+                    background: "transparent",
+                    border: "none",
+                    borderRadius: "3px",
+                    boxShadow: "none",
+                    display: "block",
+                    margin: "0",
+                    minWidth: "100%",
+                    padding: "0",
+                    width: "100%"
+                  }}
+                />
               </div>
             </motion.div>
           </div>
