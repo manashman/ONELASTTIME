@@ -1,13 +1,9 @@
 import type { Express } from "express";
-import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertContactSchema } from "@shared/schema";
 import { z } from "zod";
 
-export async function registerRoutes(
-  httpServer: Server,
-  app: Express
-): Promise<Server> {
+  export async function registerRoutes(app: Express): Promise<void> {
   
   app.get("/api/events", async (req, res) => {
     try {
@@ -68,5 +64,4 @@ export async function registerRoutes(
     }
   });
 
-  return httpServer;
 }
