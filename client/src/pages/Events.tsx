@@ -25,7 +25,7 @@ const eventCategories = [
   {
     id: 1,
     name: "Dance",
-    title: "Temporal Motion",
+    title: "DANCE EVENTS",
     icon: Mic2,
     description: "Classical, contemporary, and fusion dance competitions showcasing movement through time.",
     events: [
