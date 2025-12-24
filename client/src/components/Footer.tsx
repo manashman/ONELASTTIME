@@ -24,12 +24,12 @@ const eventCategories = [
 
 const socialLinks = [
   { icon: Instagram, href: "https://instagram.com/medrenaline.kmc", label: "Instagram" },
-  { icon: Mail, href: "mailto:medrenaline.2025@gmail.com", label: "Email" },
+  { icon: Mail, href: "mailto:pradharshini.2026@@gmail.com", label: "Email" },
 ];
 
 const contactInfo = [
-  { label: "Rajan SA", phone: "8939276895" },
-  { label: "Sindhuri R", phone: "7448833936" },
+  { label: "Rajan SA", phone: "8148314805" },
+  { label: "Sindhuri R", phone: "7010769698" },
 ];
 
 export function Footer() {
@@ -45,7 +45,7 @@ export function Footer() {
     if (email) {
       toast({
         title: "Subscribed!",
-        description: "You'll receive updates about Pradharshini 25.",
+        description: "You'll receive updates about Pradharshini 26.",
       });
       setEmail("");
     }
@@ -72,7 +72,7 @@ export function Footer() {
               <div className="flex gap-3 text-sm">
                 <MapPin className="w-4 h-4 text-primary flex-shrink-0 mt-1" />
                 <div>
-                  <p className="font-semibold text-foreground">Kilpauk Medical College</p>
+                  <p className="font-semibold text-foreground">Government Kilpauk Medical College</p>
                   <p className="text-muted-foreground">822, Poonamallee High Rd,</p>
                   <p className="text-muted-foreground">Kilpauk, Chennai,</p>
                   <p className="text-muted-foreground">Tamil Nadu 600010</p>
@@ -137,7 +137,7 @@ export function Footer() {
               ))}
               <li>
                 <a
-                  href="https://chat.whatsapp.com"
+                  href="https://chat.whatsapp.com/+918610099470"
                   className="text-sm text-muted-foreground hover:text-primary transition-colors"
                   data-testid="footer-link-whatsapp"
                 >
