@@ -72,15 +72,15 @@ export function StarBackground() {
   return (
     <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
       {/* Deep time background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[hsl(30,25%,5%)] via-[hsl(260,20%,8%)] to-[hsl(30,20%,7%)]" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[hsl(30,25%,7%)] via-[hsl(260,20%,10%)] to-[hsl(30,20%,9%)]" />
 
       {/* Central time vortex - interactive with mouse */}
       <motion.div
-        className="absolute w-[1000px] h-[1000px] rounded-full opacity-20"
+        className="absolute w-[1000px] h-[1000px] rounded-full opacity-25"
         style={{
           background:
             "radial-gradient(circle, hsl(40 85% 55% / 0.4) 0%, hsl(260 40% 50% / 0.2) 30%, transparent 70%)",
-          filter: "blur(100px)",
+          filter: "blur(80px)",
           left: mousePos.x - 500,
           top: mousePos.y - 500,
         }}
@@ -89,7 +89,7 @@ export function StarBackground() {
 
       {/* Temporal distortion fields */}
       <motion.div
-        className="absolute top-1/4 left-1/4 w-[600px] h-[600px] rounded-full opacity-15"
+        className="absolute top-1/4 left-1/4 w-[600px] h-[600px] rounded-full opacity-18"
         style={{
           background:
             "radial-gradient(circle, hsl(260 50% 45% / 0.3) 0%, transparent 70%)",
@@ -97,7 +97,7 @@ export function StarBackground() {
         }}
         animate={{
           scale: [1, 1.2, 1],
-          opacity: [0.15, 0.25, 0.15],
+          opacity: [0.18, 0.28, 0.18],
         }}
         transition={{ duration: 6, repeat: Infinity }}
       />
@@ -232,14 +232,14 @@ export function StarBackground() {
         </g>
 
         {/* Timeline - horizontal time axis */}
-        <line x1="0%" y1="50%" x2="100%" y2="50%" stroke="hsl(40 80% 55%)" strokeWidth="1" opacity="0.15" />
+        <line x1="0%" y1="50%" x2="100%" y2="50%" stroke="hsl(40 80% 55%)" strokeWidth="1" opacity="0.2" />
 
         {/* Time markers along timeline */}
         {Array.from({ length: 8 }).map((_, i) => {
           const x = (i / 7) * 100;
           return (
             <g key={`marker-${i}`}>
-              <line x1={`${x}%`} y1="47%" x2={`${x}%`} y2="53%" stroke="hsl(40 80% 55%)" strokeWidth="1.5" opacity="0.3" />
+              <line x1={`${x}%`} y1="47%" x2={`${x}%`} y2="53%" stroke="hsl(40 80% 55%)" strokeWidth="1.5" opacity="0.35" />
               <text
                 x={`${x}%`}
                 y="58%"
@@ -282,7 +282,7 @@ export function StarBackground() {
         }}
         animate={{
           scale: [1, 1.3, 1],
-          opacity: [0.3, 0.6, 0.3],
+          opacity: [0.35, 0.7, 0.35],
         }}
         transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
       />
