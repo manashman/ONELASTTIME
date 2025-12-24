@@ -10,7 +10,6 @@ import { Card, CardContent } from "@/components/ui/card";
 const editions = [
   {
     year: 2022,
-    title: "The Genesis",
     icon: Award,
     description: "Pradharshini marked its triumphant debut as a grand cultural celebration at Kilpauk Medical College. What began as a vision to unite artistic talents across the nation transformed into an unforgettable spectacle of creativity and brilliance. With over 3000 participants and 40 events, it set the foundation for what would become one of the premier cultural festivals in the region.",
     highlights: [
@@ -22,7 +21,6 @@ const editions = [
   },
   {
     year: 2023,
-    title: "The Ascension",
     icon: Users,
     description: "Building on the success of the inaugural edition, Pradharshini 2023 soared to new heights. The festival expanded exponentially, welcoming 4500 participants from across the nation. With 45 meticulously curated events and an enhanced prize pool, it became the talk of the cultural circuit. The second edition proved that Pradharshini was here to stay, establishing itself as a beacon of cultural excellence.",
     highlights: [
@@ -34,7 +32,6 @@ const editions = [
   },
   {
     year: 2024,
-    title: "The Legacy",
     icon: Zap,
     description: "Pradharshini 2024 etched itself into history as the most spectacular edition yet. With record-breaking participation of 5000+ competitors and a staggering 50 diverse events spanning multiple disciplines, it redefined what a college cultural festival could be. The enhanced infrastructure, world-class organization, and unwavering commitment to excellence made it an unforgettable journey through time and culture.",
     highlights: [

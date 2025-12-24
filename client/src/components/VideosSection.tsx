@@ -85,7 +85,7 @@ export function VideosSection() {
               <div>
                 <h3 className="font-semibold text-foreground mb-2">More Videos Coming Soon</h3>
                 <p className="text-sm text-muted-foreground">
-                  Follow @medrenaline.kmc on Instagram for exclusive content
+                  Follow @pradharshini.kmc on Instagram for exclusive content
                 </p>
               </div>
             </motion.div>
@@ -119,7 +119,7 @@ export function VideosSection() {
             Get the latest updates, announcements, and exclusive content
           </p>
           <motion.a
-            href="https://www.instagram.com/medrenaline.kmc/"
+            href="https://www.instagram.com/pradharshini.kmc/"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
@@ -127,7 +127,7 @@ export function VideosSection() {
             className="inline-block px-8 py-3 bg-gradient-to-r from-primary to-accent text-primary-foreground font-semibold rounded-lg hover:shadow-lg hover:shadow-primary/50 transition-shadow"
             data-testid="instagram-follow-button"
           >
-            Follow @medrenaline.kmc on Instagram
+            Follow @pradharshini.kmc on Instagram
           </motion.a>
         </motion.div>
       </div>

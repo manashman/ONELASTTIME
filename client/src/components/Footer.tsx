@@ -164,10 +164,10 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="mt-12 pt-8 border-t border-border/30 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground text-center md:text-left">
-            &copy; 2025 Govt Kilpauk Medical College and Hospital. All rights reserved.
+            &copy; 2026 Govt Kilpauk Medical College and Hospital. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
-            <span className="text-xs text-muted-foreground">medrenaline.2025@gmail.com</span>
+            <span className="text-xs text-muted-foreground">pradharshini.2026@gmail.com</span>
           </div>
         </div>
       </div>
