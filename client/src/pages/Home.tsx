@@ -22,7 +22,6 @@ export default function Home() {
         <AboutSection />
         <VideosSection />
         <EventsSection />
-        <WhyAttendSection />
       </main>
       
       {/* Footer */}

@@ -29,8 +29,8 @@ export function StarBackground() {
     for (let i = 0; i < 60; i++) {
       generatedParticles.push({
         id: i,
-        x: Math.random() * 100,
-        y: Math.random() * 100,
+        x: Math.random() * 10,
+        y: Math.random() * 10,
         size: Math.random() * 3 + 1,
         opacity: Math.random() * 0.5 + 0.1,
         animationDelay: Math.random() * 8,
