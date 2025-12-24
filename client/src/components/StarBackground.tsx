@@ -126,13 +126,13 @@ export function StarBackground() {
             top: `${particle.y}%`,
             width: particle.size,
             height: particle.size,
-            background: `hsl(${40 + Math.random() * 20} 80% 55%)`,
+            background: `hsl(${60 + Math.random() * 20} 80% 55%)`,
             boxShadow: `0 0 ${particle.size * 4}px hsl(40 80% 55% / 0.5)`,
           }}
           animate={{
             y: [0, -300, 0],
             x: [0, Math.random() * 100 - 50, 0],
-            opacity: [particle.opacity, particle.opacity * 0.3, particle.opacity],
+            opacity: [particle.opacity, particle.opacity * 0.5, particle.opacity],
             scale: [1, 1.5, 1],
           }}
           transition={{
