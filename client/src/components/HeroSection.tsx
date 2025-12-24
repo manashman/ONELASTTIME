@@ -163,7 +163,6 @@ export function HeroSection() {
             alt="Pradharshini 2026" 
             className="h-32 md:h-40 lg:h-48 object-contain filter invert relative z-10"
             whileHover={{ scale: 1.08 }}
-            transition={{ type: "spring", stiffness: 300, damping: 20 }}
           />
         </motion.div>
 
