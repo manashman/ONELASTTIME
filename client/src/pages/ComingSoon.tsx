@@ -61,12 +61,6 @@ export default function ComingSoon() {
           className="mb-8"
         >
           <div className="flex items-center justify-center gap-2 mb-6">
-            <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-            >
-              <Sparkles className="w-8 h-8 text-primary" />
-            </motion.div>
             <h1 className="font-display text-4xl md:text-5xl font-bold gradient-cosmic-text">
               PRADHARSHINI
             </h1>
