@@ -246,6 +246,79 @@ export default function About() {
               </div>
             </div>
           </motion.div>
+
+          {/* Photo Gallery Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="mt-16"
+          >
+            <div className="text-center mb-12">
+              <h2 className="font-display text-3xl md:text-4xl font-bold mb-4 text-foreground">
+                Moments from Pradharshini
+              </h2>
+              <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+                Capturing the energy, creativity, and spirit of our amazing cultural festival
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                {
+                  title: "Stage Brilliance",
+                  description: "Live performances lighting up the stage"
+                },
+                {
+                  title: "Cultural Showcase",
+                  description: "Diverse talents from across the nation"
+                },
+                {
+                  title: "Fashion Forward",
+                  description: "Style and creativity on display"
+                },
+                {
+                  title: "Dance Magic",
+                  description: "Mesmerizing choreography and moves"
+                },
+                {
+                  title: "Musical Notes",
+                  description: "Melodies that echo in hearts"
+                },
+                {
+                  title: "Artistic Vision",
+                  description: "Creative expressions and artistry"
+                }
+              ].map((photo, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                  transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
+                  data-testid={`photo-gallery-item-${index}`}
+                >
+                  <Card className="glass border border-border/50 overflow-hidden hover:border-primary/30 transition-colors h-full hover-elevate">
+                    <div className="relative h-48 bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
+                      <div className="text-center">
+                        <div className="text-4xl mb-2">
+                          {index === 0 && "🎭"}
+                          {index === 1 && "🎨"}
+                          {index === 2 && "👗"}
+                          {index === 3 && "💃"}
+                          {index === 4 && "🎵"}
+                          {index === 5 && "🖼️"}
+                        </div>
+                      </div>
+                    </div>
+                    <CardContent className="p-4">
+                      <h3 className="font-semibold text-foreground mb-2">{photo.title}</h3>
+                      <p className="text-sm text-muted-foreground">{photo.description}</p>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </main>
       
