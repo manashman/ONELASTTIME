@@ -6,6 +6,43 @@ import { useState } from "react";
 import { CountdownTimer } from "./CountdownTimer";
 import pradharshiniImage from "@assets/prad 2026 title new_1764267906090.png";
 
+// Gear component for reusability
+function GearGroup({ side }: { side: "left" | "right" }) {
+  const isLeft = side === "left";
+  const baseRotation = isLeft ? 1 : -1;
+  
+  return (
+    <div className={`absolute top-1/3 ${isLeft ? "left-4 md:left-12 lg:left-20" : "right-4 md:right-12 lg:right-20"} flex flex-col items-center gap-3`}>
+      {/* Large gear */}
+      <motion.div
+        animate={{ rotate: baseRotation * 360 }}
+        transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+        className="origin-center"
+      >
+        <Cog className="w-10 h-10 md:w-12 md:h-12 text-primary/80 animate-glow-pulse" />
+      </motion.div>
+      
+      {/* Medium gear */}
+      <motion.div
+        animate={{ rotate: baseRotation * 360 }}
+        transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+        className="origin-center"
+      >
+        <Cog className="w-7 h-7 md:w-8 md:h-8 text-primary/60" />
+      </motion.div>
+      
+      {/* Small gear */}
+      <motion.div
+        animate={{ rotate: baseRotation * 360 }}
+        transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+        className="origin-center"
+      >
+        <Cog className="w-5 h-5 md:w-6 md:h-6 text-primary/40" />
+      </motion.div>
+    </div>
+  );
+}
+
 export function HeroSection() {
   const [, navigate] = useLocation();
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -107,21 +144,48 @@ export function HeroSection() {
         />
       </motion.div>
 
+      {/* Background clocks - subtle and slow */}
+      <motion.div
+        className="absolute top-1/4 left-1/4 opacity-10 hidden lg:block"
+        animate={{ rotate: 360 }}
+        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+      >
+        <Clock className="w-16 h-16 text-primary" />
+      </motion.div>
+      <motion.div
+        className="absolute bottom-1/3 right-1/4 opacity-10 hidden lg:block"
+        animate={{ rotate: 360 }}
+        transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+      >
+        <Clock className="w-20 h-20 text-primary" />
+      </motion.div>
+      <motion.div
+        className="absolute top-2/3 right-1/3 opacity-5 hidden lg:block"
+        animate={{ rotate: 360 }}
+        transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+      >
+        <Clock className="w-24 h-24 text-primary" />
+      </motion.div>
+      <motion.div
+        className="absolute bottom-1/4 left-1/3 opacity-10 hidden lg:block"
+        animate={{ rotate: 360 }}
+        transition={{ duration: 22, repeat: Infinity, ease: "linear" }}
+      >
+        <Clock className="w-14 h-14 text-primary" />
+      </motion.div>
+
+      {/* Gear groups on sides */}
+      <GearGroup side="left" />
+      <GearGroup side="right" />
+
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Pre-title with enhanced glow */}
         <motion.div
           initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="flex items-center justify-center gap-4 mb-6 group"
+          className="flex items-center justify-center gap-6 mb-6 group"
         >
-          <motion.div
-            animate={{ rotate: 360 }}
-            transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-            className="origin-center"
-          >
-            <Cog className="w-6 h-6 text-primary animate-glow-pulse" />
-          </motion.div>
           <motion.span 
             className="text-sm md:text-base font-medium text-primary tracking-widest uppercase animate-text-glow"
             whileHover={{ 
@@ -132,13 +196,6 @@ export function HeroSection() {
           >
             Where Glory Beckons
           </motion.span>
-          <motion.div
-            animate={{ rotate: -360 }}
-            transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-            className="origin-center"
-          >
-            <Cog className="w-6 h-6 text-primary animate-glow-pulse" />
-          </motion.div>
         </motion.div>
 
         {/* Main Title - Logo Image with glow */}
