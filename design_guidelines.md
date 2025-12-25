@@ -1,13 +1,13 @@
-# Pradharshini 25 - Time Travel Themed Cultural Event Website Design Guidelines
+# Pradharshini 2026 - Mystical Cultural Event Website Design Guidelines
 
 ## Design Approach
-**Reference-Based Approach** inspired by premium temporal experiences like Watchmaker's craftsmanship sites, The Time Machine film aesthetics, steampunk luxury brands, and chrono-mechanical interfaces. The design fuses Victorian-era elegance with futuristic temporal technology, creating a mysterious, luxurious atmosphere.
+**Premium Mystical Aesthetic** inspired by the cosmic and energetic Pradharshini brand identity. The design combines deep purple mystique with vibrant golden accents, creating a sophisticated, professional yet energetic atmosphere that celebrates cultural excellence.
 
 ## Core Design Principles
-- **Temporal Luxury**: Rich vintage-futuristic aesthetic with layered chronological depth
-- **Mechanical Precision**: Clockwork-inspired interactions and geometric patterns
-- **Mysterious Elegance**: Sophisticated temporal narrative through visual storytelling
-- **Cultural Timelessness**: Time travel theme harmonizes with traditional cultural celebration
+- **Mystical Elegance**: Rich purple-dominant palette with golden highlights for vibrancy
+- **Professional Clarity**: Clean, uncluttered design with strategic visual hierarchy
+- **Interactive Excellence**: Smooth, meaningful animations without overwhelming the user
+- **Cultural Celebration**: Design reinforces the dynamic energy of Pradharshini 2026
 
 ---
 
@@ -158,17 +158,17 @@
 
 ---
 
-## Images
+## Images & Visual Elements
 
-**Hero Image**: Vintage pocket watch with exposed gears, swirling temporal energy (deep indigo/purple rifts), bronze/copper mechanical elements, layered depth with sepia edges transitioning to vibrant temporal core. High-resolution, full viewport coverage.
+**Hero Image**: Cosmic portal aesthetic with deep purple and orange glow, energetic and forward-facing. High-resolution, full viewport coverage.
 
-**Section Backgrounds**: Subtle clockwork patterns, vintage blueprint grids, constellation-like gear arrangements
+**Section Backgrounds**: Subtle gradient overlays using purple-to-transparent transitions, minimal geometric patterns
 
-**Event Cards**: Sepia or bronze-filtered category imagery, vintage icons for cultural events
+**Event Cards**: High-quality photography with slight overlay for text readability, natural lighting preserved
 
-**Gallery**: Past event photos with vintage photo frame treatments, warm tone filters
+**Gallery/Slideshow**: Professional event photography with smooth transitions, no excessive filters
 
-**Decorative Elements**: Ornate corner flourishes, gear dividers, brass embellishments, antique scroll borders
+**Decorative Elements**: Minimal - focus on gears and geometric shapes, primarily using primary gold color for accent
 
 ---
 
