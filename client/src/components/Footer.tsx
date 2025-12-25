@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
-import { Sparkles, ArrowUp, Mail, Instagram, Facebook, Twitter, Youtube, MapPin, Phone } from "lucide-react";
+import { ArrowUp, Mail, Instagram, Facebook, Twitter, Youtube, MapPin, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import logoImg from "@assets/favicon_1766685081256.png";
 
 const quickLinks = [
   { name: "Home", href: "#home" },
@@ -150,7 +151,11 @@ export function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <Sparkles className="w-6 h-6 text-primary" />
+              <img 
+                src={logoImg} 
+                alt="Pradharshini Logo" 
+                className="w-6 h-6 invert" 
+              />
               <span className="font-display text-lg font-bold gradient-cosmic-text">
                 PRADHARSHINI
               </span>

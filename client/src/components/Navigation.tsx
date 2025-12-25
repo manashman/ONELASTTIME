@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLocation } from "wouter";
-import { Menu, X, Sparkles } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logoImg from "@assets/favicon_1766685081256.png";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -59,7 +60,11 @@ export function Navigation() {
               className="flex items-center gap-2"
               whileHover={{ scale: 1.02 }}
             >
-              <Sparkles className="w-6 h-6 md:w-8 md:h-8 text-primary" />
+              <img 
+                src={logoImg} 
+                alt="Pradharshini Logo" 
+                className="w-6 h-6 md:w-8 md:h-8 invert" 
+              />
               <span className="font-display text-lg md:text-xl font-bold gradient-cosmic-text">
                 PRADHARSHINI
               </span>
