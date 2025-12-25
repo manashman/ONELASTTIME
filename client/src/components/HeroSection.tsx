@@ -1,5 +1,5 @@
 import { motion, useMotionValue, useTransform } from "framer-motion";
-import { ChevronDown, Clock, Star } from "lucide-react";
+import { ChevronDown, Clock, Cog } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLocation } from "wouter";
 import { useState } from "react";
@@ -113,14 +113,14 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="flex items-center justify-center gap-2 mb-6 group"
+          className="flex items-center justify-center gap-4 mb-6 group"
         >
           <motion.div
-            animate={{ rotate: 360, scale: [1, 1.2, 1] }}
-            transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+            animate={{ rotate: 360 }}
+            transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
             className="origin-center"
           >
-            <Star className="w-5 h-5 text-primary animate-glow-pulse" />
+            <Cog className="w-6 h-6 text-primary animate-glow-pulse" />
           </motion.div>
           <motion.span 
             className="text-sm md:text-base font-medium text-primary tracking-widest uppercase animate-text-glow"
@@ -133,11 +133,11 @@ export function HeroSection() {
             Where Glory Beckons
           </motion.span>
           <motion.div
-            animate={{ rotate: -360, scale: [1, 1.2, 1] }}
-            transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+            animate={{ rotate: -360 }}
+            transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
             className="origin-center"
           >
-            <Star className="w-5 h-5 text-primary animate-glow-pulse" />
+            <Cog className="w-6 h-6 text-primary animate-glow-pulse" />
           </motion.div>
         </motion.div>
 
