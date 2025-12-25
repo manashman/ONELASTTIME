@@ -9,9 +9,9 @@ const navLinks = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
   { name: "Events", href: "/events" },
-  { name: "Other Events", href: "/other-events" },
   { name: "Schedule", href: "/schedule" },
   { name: "Contact", href: "/contact" },
+  { name: "Our Other Events", href: "/other-events" },
 ];
 
 export function Navigation() {

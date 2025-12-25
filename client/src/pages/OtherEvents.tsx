@@ -4,50 +4,42 @@ import { Footer } from "@/components/Footer";
 import { motion } from "framer-motion";
 import { useRef } from "react";
 import { useInView } from "framer-motion";
-import { Sparkles, Music, Palette, Trophy, Users, Zap } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
-const otherEvents = [
+const events = [
   {
-    title: "Workshops & Masterclasses",
-    description: "Interactive sessions with industry experts and accomplished performers sharing their knowledge and techniques",
-    icon: Sparkles,
-    highlights: ["Industry Experts", "Live Demonstrations", "Q&A Sessions", "Certificate of Participation"]
+    title: "Aadukalam",
+    subtitle: "A Celebration of Classical Performing Arts",
+    description: "Aadukalam is a premier platform dedicated to showcasing the rich heritage of classical Indian performing arts. This event celebrates the traditional art forms including Bharatanatyam, Kuchipudi, Odissi, and other classical dance styles that have been passed down through generations. Aadukalam provides an exquisite stage for dancers and musicians to exhibit their mastery, preserving cultural legacy while inspiring new generations to appreciate and practice these timeless art forms.",
+    highlights: [
+      "Classical Dance Competitions",
+      "Instrumental Music Performances",
+      "Traditional Music Recitals",
+      "Cultural Heritage Showcase",
+      "Expert Judging Panel",
+      "Prizes & Recognition"
+    ],
+    icon: "🎭"
   },
   {
-    title: "Collaborative Performances",
-    description: "Special joint performances featuring talented artists from multiple colleges coming together for spectacular shows",
-    icon: Users,
-    highlights: ["Multi-college Acts", "Fusion Performances", "Special Guests", "Grand Finales"]
-  },
-  {
-    title: "Art & Photography Exhibition",
-    description: "Stunning visual displays showcasing student artwork, digital creations, and thought-provoking photography",
-    icon: Palette,
-    highlights: ["Curated Collections", "Student Artists", "Interactive Displays", "Photography Awards"]
-  },
-  {
-    title: "Innovation & Talent Competition",
-    description: "A platform for emerging talents to showcase unique skills, innovative ideas, and creative talents",
-    icon: Zap,
-    highlights: ["Talent Discovery", "Innovation Showcase", "Mentorship Opportunities", "Exclusive Prizes"]
-  },
-  {
-    title: "Comedy & Entertainment Nights",
-    description: "Laugh out loud with hilarious stand-up comedy, improv acts, and entertaining theatrical performances",
-    icon: Music,
-    highlights: ["Stand-up Comedy", "Improv Acts", "Sketch Comedy", "Entertainment Prizes"]
-  },
-  {
-    title: "Recognition & Awards Ceremony",
-    description: "Celebrating excellence and honoring the outstanding contributions and performances from all participants",
-    icon: Trophy,
-    highlights: ["Excellence Awards", "Best Performer", "College Recognition", "Special Honors"]
+    title: "Medrenaline",
+    subtitle: "Medical Students' Adrenaline-Pumping Extravaganza",
+    description: "Medrenaline is the heart-racing, high-energy event designed exclusively for the vibrant medical student community. This unique extravaganza blends the intensity of medical academics with the thrill of performance and competition. From medical debates and case presentations to dramatics and talent showcases, Medrenaline celebrates the multifaceted talents of future healthcare professionals. It's a space where brilliance meets passion, where medical minds unwind through creative expression, and where camaraderie transcends competition.",
+    highlights: [
+      "Medical Debates & Discussions",
+      "Clinical Case Presentations",
+      "Medical Dramatics",
+      "Talent Showcases",
+      "Networking Opportunities",
+      "Healthcare Innovation Showcase"
+    ],
+    icon: "⚕️"
   }
 ];
 
-function EventCard({ event, index }: { event: typeof otherEvents[0]; index: number }) {
-  const Icon = event.icon;
+function EventCard({ event, index }: { event: typeof events[0]; index: number }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
@@ -56,32 +48,51 @@ function EventCard({ event, index }: { event: typeof otherEvents[0]; index: numb
       ref={ref}
       initial={{ opacity: 0, y: 40 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.6, delay: index * 0.1 }}
+      transition={{ duration: 0.6, delay: index * 0.2 }}
       data-testid={`event-card-${index}`}
     >
-      <Card className="glass border border-border/50 hover:border-primary/30 transition-colors h-full hover-elevate">
+      <Card className="glass border border-border/50 hover:border-primary/30 transition-colors h-full hover-elevate overflow-hidden">
         <CardContent className="p-8">
-          <div className="flex items-center gap-4 mb-4">
-            <div className="p-3 rounded-lg bg-primary/10">
-              <Icon className="w-6 h-6 text-primary" />
-            </div>
-            <h3 className="font-display text-xl font-bold text-foreground">
-              {event.title}
-            </h3>
-          </div>
+          {/* Icon */}
+          <div className="text-5xl mb-6">{event.icon}</div>
+          
+          {/* Title */}
+          <h2 className="font-display text-3xl font-bold mb-2 text-foreground">
+            {event.title}
+          </h2>
+          
+          {/* Subtitle */}
+          <p className="text-primary font-semibold mb-4 text-sm">
+            {event.subtitle}
+          </p>
 
+          {/* Description */}
           <p className="text-muted-foreground mb-6 leading-relaxed">
             {event.description}
           </p>
 
-          <div className="space-y-2">
-            {event.highlights.map((highlight, idx) => (
-              <div key={idx} className="flex items-center gap-2">
-                <span className="text-primary text-sm">●</span>
-                <p className="text-sm text-foreground">{highlight}</p>
-              </div>
-            ))}
+          {/* Highlights */}
+          <div className="mb-8">
+            <h3 className="font-semibold text-foreground mb-4">Key Features</h3>
+            <div className="grid grid-cols-2 gap-3">
+              {event.highlights.map((highlight, idx) => (
+                <div key={idx} className="flex items-start gap-2">
+                  <span className="text-primary text-lg mt-1">✦</span>
+                  <span className="text-sm text-foreground">{highlight}</span>
+                </div>
+              ))}
+            </div>
           </div>
+
+          {/* Button */}
+          <Button 
+            className="w-full group"
+            onClick={() => window.open("https://google.com", "_blank")}
+            data-testid={`button-event-link-${index}`}
+          >
+            Visit Website
+            <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+          </Button>
         </CardContent>
       </Card>
     </motion.div>
@@ -108,73 +119,50 @@ export default function OtherEvents() {
             className="text-center mb-16"
           >
             <span className="text-primary font-display text-sm tracking-widest uppercase mb-4 block">
-              Beyond Competitions
+              Special Events
             </span>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
               <span className="gradient-cosmic-text">Our Other Events</span>
             </h1>
             <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-              Experience more than just competitions. Pradharshini offers a diverse range of engaging events and activities designed to celebrate talent in all its forms.
+              Discover our distinctive events that celebrate culture, talent, and community. Each event brings a unique flavor to the Pradharshini experience, showcasing excellence in different domains.
             </p>
           </motion.div>
 
-          {/* Introduction Section */}
+          {/* Two Column Events Layout */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="mb-16 p-8 md:p-12 rounded-xl glass border border-primary/20"
+            className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16"
           >
-            <h2 className="font-display text-2xl font-bold mb-4 text-foreground">
-              A Complete Celebration
-            </h2>
-            <p className="text-muted-foreground text-lg leading-relaxed">
-              While our competitive events showcase raw talent, our special events and programs are designed to enrich the festival experience. From masterclasses with industry experts to collaborative performances that bring colleges together, Pradharshini is much more than just competitions. We celebrate creativity, foster learning, and create unforgettable memories.
-            </p>
+            {events.map((event, index) => (
+              <EventCard key={index} event={event} index={index} />
+            ))}
           </motion.div>
 
-          {/* Events Grid */}
+          {/* Impact Section */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mb-16"
-          >
-            <h2 className="font-display text-3xl font-bold mb-8 text-center text-foreground">Featured Events</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {otherEvents.map((event, index) => (
-                <EventCard key={index} event={event} index={index} />
-              ))}
-            </div>
-          </motion.div>
-
-          {/* Experience Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.3 }}
             className="mt-16 p-8 md:p-12 rounded-xl glass border border-primary/20"
           >
             <div className="text-center max-w-3xl mx-auto">
               <h2 className="font-display text-3xl font-bold mb-6 text-foreground">
-                Why Join Our Events?
+                Why These Events Matter
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                  <p className="text-2xl font-bold text-primary mb-2">Learn</p>
-                  <p className="text-muted-foreground">Gain insights from industry experts and accomplished performers</p>
+              <p className="text-muted-foreground text-lg leading-relaxed mb-8">
+                Aadukalam and Medrenaline represent the two pillars of Pradharshini—preserving cultural heritage while celebrating the unique talents of our medical community. Together, they create a holistic festival experience that honors tradition and innovation, classical arts and contemporary excellence.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
+                <div className="p-6 rounded-lg bg-background/40 border border-border/30">
+                  <p className="text-2xl font-bold text-primary mb-2">Cultural</p>
+                  <p className="text-muted-foreground">Aadukalam preserves and promotes India's classical artistic traditions</p>
                 </div>
-                <div>
-                  <p className="text-2xl font-bold text-primary mb-2">Connect</p>
-                  <p className="text-muted-foreground">Network with talented students from colleges across the nation</p>
-                </div>
-                <div>
-                  <p className="text-2xl font-bold text-primary mb-2">Create</p>
-                  <p className="text-muted-foreground">Collaborate and create memorable moments with fellow artists</p>
-                </div>
-                <div>
-                  <p className="text-2xl font-bold text-primary mb-2">Grow</p>
-                  <p className="text-muted-foreground">Develop your skills and expand your creative horizons</p>
+                <div className="p-6 rounded-lg bg-background/40 border border-border/30">
+                  <p className="text-2xl font-bold text-primary mb-2">Community</p>
+                  <p className="text-muted-foreground">Medrenaline celebrates the diverse talents within the medical fraternity</p>
                 </div>
               </div>
             </div>
