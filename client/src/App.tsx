@@ -9,6 +9,7 @@ import Events from "@/pages/Events";
 import OtherEvents from "@/pages/OtherEvents";
 import Schedule from "@/pages/Schedule";
 import Contact from "@/pages/Contact";
+import ComingSoon from "@/pages/ComingSoon";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -26,11 +27,14 @@ function Router() {
 }
 
 function App() {
+  // Check if coming soon page should be shown
+  const isComingSoon = import.meta.env.VITE_SHOW_COMING_SOON === "true";
+
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Toaster />
-        <Router />
+        {isComingSoon ? <ComingSoon /> : <Router />}
       </TooltipProvider>
     </QueryClientProvider>
   );
