@@ -2,10 +2,12 @@ import { StarBackground } from "@/components/StarBackground";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { motion } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { useInView } from "framer-motion";
-import { Award, Users, Zap, History, Music, Palette } from "lucide-react";
+import { Award, Users, Zap, History, Music, Palette, ChevronLeft, ChevronRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import eventPhoto from "@assets/WhatsApp_Image_2025-12-23_at_16.35.39_1766687243188.jpeg";
 
 const editions = [
   {
@@ -42,6 +44,176 @@ const editions = [
     ]
   }
 ];
+
+function PhotoGalleryCarousel() {
+  const galleryRef = useRef(null);
+  const isInView = useInView(galleryRef, { once: true, margin: "-100px" });
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [autoPlay, setAutoPlay] = useState(true);
+
+  const photos = [
+    {
+      image: eventPhoto,
+      title: "Stage Brilliance",
+      description: "Live performances lighting up the stage"
+    },
+    {
+      title: "Cultural Showcase",
+      description: "Diverse talents from across the nation",
+      icon: "🎨"
+    },
+    {
+      title: "Fashion Forward",
+      description: "Style and creativity on display",
+      icon: "👗"
+    },
+    {
+      title: "Dance Magic",
+      description: "Mesmerizing choreography and moves",
+      icon: "💃"
+    },
+    {
+      title: "Musical Notes",
+      description: "Melodies that echo in hearts",
+      icon: "🎵"
+    },
+    {
+      title: "Artistic Vision",
+      description: "Creative expressions and artistry",
+      icon: "🖼️"
+    }
+  ];
+
+  useEffect(() => {
+    if (!autoPlay) return;
+    
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % photos.length);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [autoPlay, photos.length]);
+
+  const goToSlide = (index: number) => {
+    setCurrentIndex(index);
+    setAutoPlay(false);
+    setTimeout(() => setAutoPlay(true), 5000);
+  };
+
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev + 1) % photos.length);
+    setAutoPlay(false);
+    setTimeout(() => setAutoPlay(true), 5000);
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev - 1 + photos.length) % photos.length);
+    setAutoPlay(false);
+    setTimeout(() => setAutoPlay(true), 5000);
+  };
+
+  const currentPhoto = photos[currentIndex];
+
+  return (
+    <motion.div
+      ref={galleryRef}
+      initial={{ opacity: 0, y: 30 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.6, delay: 0.5 }}
+      className="mt-16"
+    >
+      <div className="text-center mb-12">
+        <h2 className="font-display text-3xl md:text-4xl font-bold mb-4 text-foreground">
+          Moments from Pradharshini
+        </h2>
+        <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          Capturing the energy, creativity, and spirit of our amazing cultural festival
+        </p>
+      </div>
+
+      {/* Main Carousel */}
+      <div className="relative max-w-4xl mx-auto">
+        <Card className="glass border border-border/50 overflow-hidden">
+          <div className="relative h-96 bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
+            <motion.div
+              key={currentIndex}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              transition={{ duration: 0.5 }}
+              className="absolute inset-0 flex items-center justify-center"
+              data-testid={`gallery-slide-${currentIndex}`}
+            >
+              {currentPhoto.image ? (
+                <img
+                  src={currentPhoto.image}
+                  alt={currentPhoto.title}
+                  className="w-full h-full object-cover"
+                />
+              ) : (
+                <div className="text-center">
+                  <div className="text-6xl mb-4">{currentPhoto.icon}</div>
+                </div>
+              )}
+              {/* Overlay for better text contrast */}
+              <div className="absolute inset-0 bg-black/30" />
+            </motion.div>
+          </div>
+
+          <CardContent className="p-8 text-center">
+            <h3 className="font-semibold text-foreground mb-2 text-xl">
+              {currentPhoto.title}
+            </h3>
+            <p className="text-muted-foreground">{currentPhoto.description}</p>
+          </CardContent>
+        </Card>
+
+        {/* Navigation Buttons */}
+        <Button
+          size="icon"
+          variant="outline"
+          className="absolute left-4 top-1/2 -translate-y-1/2 z-10 glass border-primary/30 hover:border-primary/50"
+          onClick={prevSlide}
+          data-testid="gallery-prev-button"
+        >
+          <ChevronLeft className="w-4 h-4" />
+        </Button>
+        <Button
+          size="icon"
+          variant="outline"
+          className="absolute right-4 top-1/2 -translate-y-1/2 z-10 glass border-primary/30 hover:border-primary/50"
+          onClick={nextSlide}
+          data-testid="gallery-next-button"
+        >
+          <ChevronRight className="w-4 h-4" />
+        </Button>
+
+        {/* Slide Indicators */}
+        <div className="flex items-center justify-center gap-2 mt-6">
+          {photos.map((_, index) => (
+            <motion.button
+              key={index}
+              onClick={() => goToSlide(index)}
+              className={`h-2 rounded-full transition-all ${
+                index === currentIndex
+                  ? "bg-primary w-8"
+                  : "bg-primary/30 w-2 hover:bg-primary/50"
+              }`}
+              whileHover={{ scale: 1.2 }}
+              data-testid={`gallery-indicator-${index}`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
+        </div>
+
+        {/* Auto-play indicator */}
+        <div className="text-center mt-4 text-xs text-muted-foreground">
+          {autoPlay && "Auto-playing..."}
+        </div>
+      </div>
+    </motion.div>
+  );
+}
 
 function EditionCard({ edition, index }: { edition: typeof editions[0]; index: number }) {
   const Icon = edition.icon;
@@ -247,78 +419,9 @@ export default function About() {
             </div>
           </motion.div>
 
-          {/* Photo Gallery Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            className="mt-16"
-          >
-            <div className="text-center mb-12">
-              <h2 className="font-display text-3xl md:text-4xl font-bold mb-4 text-foreground">
-                Moments from Pradharshini
-              </h2>
-              <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                Capturing the energy, creativity, and spirit of our amazing cultural festival
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[
-                {
-                  title: "Stage Brilliance",
-                  description: "Live performances lighting up the stage"
-                },
-                {
-                  title: "Cultural Showcase",
-                  description: "Diverse talents from across the nation"
-                },
-                {
-                  title: "Fashion Forward",
-                  description: "Style and creativity on display"
-                },
-                {
-                  title: "Dance Magic",
-                  description: "Mesmerizing choreography and moves"
-                },
-                {
-                  title: "Musical Notes",
-                  description: "Melodies that echo in hearts"
-                },
-                {
-                  title: "Artistic Vision",
-                  description: "Creative expressions and artistry"
-                }
-              ].map((photo, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                  transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
-                  data-testid={`photo-gallery-item-${index}`}
-                >
-                  <Card className="glass border border-border/50 overflow-hidden hover:border-primary/30 transition-colors h-full hover-elevate">
-                    <div className="relative h-48 bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
-                      <div className="text-center">
-                        <div className="text-4xl mb-2">
-                          {index === 0 && "🎭"}
-                          {index === 1 && "🎨"}
-                          {index === 2 && "👗"}
-                          {index === 3 && "💃"}
-                          {index === 4 && "🎵"}
-                          {index === 5 && "🖼️"}
-                        </div>
-                      </div>
-                    </div>
-                    <CardContent className="p-4">
-                      <h3 className="font-semibold text-foreground mb-2">{photo.title}</h3>
-                      <p className="text-sm text-muted-foreground">{photo.description}</p>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
+          {/* Photo Gallery Section - Automatic Slideshow */}
+          <PhotoGalleryCarousel />
+          
         </div>
       </main>
       
