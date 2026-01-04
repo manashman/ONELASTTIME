@@ -11,12 +11,9 @@ import {
   Drama, 
   PenTool, 
   Camera,
-  Gamepad2,
-  Code,
   Trophy,
   Users,
-  Calendar,
-  MapPin
+  Calendar
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -29,12 +26,12 @@ const eventCategories = [
     icon: Mic2,
     description: "Classical, contemporary, and fusion dance competitions showcasing movement through time.",
     events: [
-      { name: "Solo Choreo" },
-      { name: "Duet Choreo" },
-      { name: "Adapt Tunes" },
-      { name: "Replica" },
-      { name: "Traditional Group Dance" },
-      { name: "Western Group Dance" },
+      { name: "Solo Choreo", formUrl: "https://forms.gle/N9GJLFm4RiD3iB379" },
+      { name: "Duet Choreo", formUrl: "https://forms.gle/3BV15j4VaEVdt68Y7" },
+      { name: "Adapt Tunes", formUrl: "https://forms.gle/kuutsghrQmeRrd6Y7" },
+      { name: "Replica", formUrl: "https://forms.gle/sSGw52t1AoHQhqJz7" },
+      { name: "Traditional Group Dance", formUrl: "https://forms.gle/akjz4R9793xz74oT7" },
+      { name: "Western Group Dance", formUrl: "https://forms.gle/YZ473iqvofmtyViR7" },
     ]
   },
   {
@@ -44,10 +41,10 @@ const eventCategories = [
     icon: Music,
     description: "Battle of bands, solo performances, vocal competitions, and orchestral showcases across multiple eras of music.",
     events: [
-      { name: "Solo Singing", formUrl: "https://forms.gle/FMiRkkLgGoBZKzxe8" },
-      { name: "Duet Singing", formUrl: "https://forms.gle/PRhAhFBcwnExyAsj8" },
-      { name: "Solo Instrumentals", formUrl: "https://forms.gle/7evBfNZvQBhfdNhx7" },
-      { name: "Battle of Bands", formUrl: "https://forms.gle/nP6t7yHiGG96TtqP9" },
+      { name: "Solo Singing", formUrl: "https://forms.gle/tSmaSSSJUKfPoMTE7" },
+      { name: "Duet Singing", formUrl: "https://forms.gle/yLcjMTLQsv7RGKmx8" },
+      { name: "Solo Instrumentals", formUrl: "https://forms.gle/8cvVsPtM83Mq9H818" },
+      { name: "Battle of Bands", formUrl: "https://forms.gle/1QNZeb5EAdMuYkRbA" },
     ]
   },
   {
@@ -57,17 +54,17 @@ const eventCategories = [
     icon: Drama,
     description: "Theatrical performances and street plays depicting historical narratives and contemporary stories.",
     events: [
-      { name: "Variety" },
-      { name: "Shipwreck" },
-      { name: "Channel Surfing" },
-      { name: "Adzap" },
-      { name: "Mimicry" },
-      { name: "Monoacting" },
-      { name: "Rangoli" },
-      { name: "Gasless Cooking" },
-      { name: "Antakshari" },
-      { name: "Connexions" },
-      { name: "Movie Spoof" },
+      { name: "Variety", formUrl: "https://forms.gle/LSiJp17YLxjfmF3s7" },
+      { name: "Shipwreck", formUrl: "https://forms.gle/Y5wEo23FbgnpijRB6" },
+      { name: "Channel Surfing", formUrl: "https://forms.gle/sCoaVvxBtKuJTNXj7" },
+      { name: "Adzap", formUrl: "https://forms.gle/rnrG5aieVVrc75ZS6" },
+      { name: "Mimicry", formUrl: "https://forms.gle/hbTpfvCK5VSVqLeVA" },
+      { name: "Monoacting", formUrl: "https://forms.gle/ptGFXhQpxKzxNJw19" },
+      { name: "Rangoli", formUrl: "https://forms.gle/kKquXDEbGPRtkEP58" },
+      { name: "Gasless Cooking", formUrl: "https://forms.gle/1e1rKRWqf9wFR1918" },
+      { name: "Antakshari", formUrl: "https://forms.gle/YiDcZXVSipobs9oe6" },
+      { name: "Connexions", formUrl: "https://forms.gle/B13BKnAKmf67rGKp8" },
+      { name: "Movie Spoof", formUrl: "https://forms.gle/yMDzE9ep8soeNAiG6" },
     ]
   },
   {
@@ -77,22 +74,22 @@ const eventCategories = [
     icon: Palette,
     description: "Fashion and artistic performances bringing style and creativity to life.",
     events: [
-      { name: "Fashion Parade" },
-      { name: "Mehendi" },
-      { name: "Face Painting" },
-      { name: "Body Building" },
+      { name: "Fashion Parade", formUrl: "https://forms.gle/h9D9f4hLHasjdA35A" },
+      { name: "Mehendi", formUrl: "https://forms.gle/AdDRogyFeqddjEed7" },
+      { name: "Face Painting", formUrl: "https://forms.gle/XZDeuUDigEWXhaR59" },
+      { name: "Body Building", formUrl: "https://forms.gle/dGUVZJ5qkDfYjsJ18" },
     ]
   },
   {
     id: 5,
     name: "Quiz",
     title: "Minds of Time",
-    icon: Code,
+    icon: PenTool,
     description: "Knowledge competitions testing expertise across diverse domains.",
     events: [
-      { name: "GK Quiz" },
-      { name: "Fandom Quiz" },
-      { name: "Anime Quiz" },
+      { name: "GK Quiz", formUrl: "https://forms.gle/QQc7A3KemVhEXmDQ8" },
+      { name: "Fandom Quiz", formUrl: "https://forms.gle/MjNGAAgfeGgUGpe38" },
+      { name: "Anime Quiz", formUrl: "https://forms.gle/NE28YRimixBLgkxf8" },
     ]
   },
   {
@@ -102,20 +99,20 @@ const eventCategories = [
     icon: PenTool,
     description: "Poetry, creative writing, debate, and storytelling competitions in Tamil and English.",
     events: [
-      { name: "Tamil Kavithai" },
-      { name: "Kaviarangam" },
-      { name: "Vaarthail Vettai" },
-      { name: "Tamil Debate" },
-      { name: "Tamil Extempore" },
-      { name: "Tamil Creative Writing" },
-      { name: "Tamil Quiz" },
-      { name: "English Debate" },
-      { name: "English JAM" },
-      { name: "English Creative Writing" },
-      { name: "Flash Fiction" },
-      { name: "Block & Tackle" },
-      { name: "English Poetry" },
-      { name: "English Performance Poetry" },
+      { name: "Tamil Kavithai", formUrl: "https://forms.gle/AxmMwNkm3mYuNVdL6" },
+      { name: "Tamil Haiku", formUrl: "https://forms.gle/w4ke5TNNEcPYcvgP6" },
+      { name: "Kaviarangam", formUrl: "https://forms.gle/GtCGEM8ePrGeCDT3A" },
+      { name: "Vaarthail Vettai", formUrl: "https://forms.gle/kLnhAkY8dJ2twJDY7" },
+      { name: "Tamil Debate", formUrl: "https://forms.gle/YnttqL4YcDyZyijQA" },
+      { name: "Tamil Extempore", formUrl: "https://forms.gle/ZRMXtESLjSBgRjPe6" },
+      { name: "Tamil Creative Writing", formUrl: "https://forms.gle/xgCdmfPwVF46v2Wk7" },
+      { name: "English Debate", formUrl: "https://forms.gle/cKSVuPCZxNrNSTow6" },
+      { name: "English JAM", formUrl: "https://forms.gle/FS5WDfj7BpkRHbkH9" },
+      { name: "English Creative Writing", formUrl: "https://forms.gle/kZGPBiGQvjDN3L5c7" },
+      { name: "Flash Fiction", formUrl: "https://forms.gle/PU2YrnETsTebrcW57" },
+      { name: "Block & Tackle", formUrl: "https://forms.gle/kRPBQZijqX2BHGzg7" },
+      { name: "English Poetry", formUrl: "https://forms.gle/vfbPUwEqp95TDba99" },
+      { name: "Tamil Quiz", formUrl: "https://forms.gle/xnYVMzBRfLLrbPt78" },
     ]
   },
   {
@@ -125,14 +122,14 @@ const eventCategories = [
     icon: Camera,
     description: "Digital competitions showcasing creativity in photography, film, and design.",
     events: [
-      { name: "Photography" },
-      { name: "Short Film" },
-      { name: "Reels" },
-      { name: "Digital Art" },
-      { name: "Trailer Making" },
-      { name: "Book Cover Designing" },
-      { name: "Movie Frame Recreation" },
-      { name: "Meme" },
+      { name: "Photography", formUrl: "https://forms.gle/2Ha9rTX3QdEqj78C7" },
+      { name: "Short Film", formUrl: "https://forms.gle/Fx2JmUizPtthkyS18" },
+      { name: "Reels", formUrl: "https://forms.gle/QP1L5aqgoBnemfmY9" },
+      { name: "Digital Art", formUrl: "https://forms.gle/17zYK7e1G8B7ct9s6" },
+      { name: "Trailer Making", formUrl: "https://forms.gle/YRC6jigjMxne5wKh9" },
+      { name: "Book Cover Designing", formUrl: "https://forms.gle/SBtRv8d1vy6DXWUm9" },
+      { name: "Movie Frame Recreation", formUrl: "https://forms.gle/CdXgoTQwPPc3Gt4g7" },
+      { name: "Meme", formUrl: "https://forms.gle/BtSpZxfxT3wZgBYj7" },
     ]
   },
 ];
@@ -211,7 +208,6 @@ export default function Events() {
       
       <main className="relative z-10 pt-24 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Page Header */}
           <motion.div
             ref={ref}
             initial={{ opacity: 0, y: 30 }}
@@ -237,14 +233,12 @@ export default function Events() {
             </div>
           </motion.div>
 
-          {/* Events Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 lg:gap-8">
             {eventCategories.map((category, index) => (
               <EventCard key={category.id} category={category} index={index} />
             ))}
           </div>
 
-          {/* Info Section */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
