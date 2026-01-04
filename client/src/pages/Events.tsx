@@ -47,7 +47,6 @@ const eventCategories = [
       { name: "Solo Singing", formUrl: "https://forms.gle/FMiRkkLgGoBZKzxe8" },
       { name: "Duet Singing", formUrl: "https://forms.gle/PRhAhFBcwnExyAsj8" },
       { name: "Solo Instrumentals", formUrl: "https://forms.gle/7evBfNZvQBhfdNhx7" },
-      { name: "Beatboxing", formUrl: "https://forms.gle/NHWrBFiwCaXKHhqa8" },
       { name: "Battle of Bands", formUrl: "https://forms.gle/nP6t7yHiGG96TtqP9" },
     ]
   },
@@ -82,7 +81,6 @@ const eventCategories = [
       { name: "Mehendi" },
       { name: "Face Painting" },
       { name: "Body Building" },
-      { name: "Soap Carving" },
     ]
   },
   {
@@ -110,8 +108,9 @@ const eventCategories = [
       { name: "Tamil Debate" },
       { name: "Tamil Extempore" },
       { name: "Tamil Creative Writing" },
+      { name: "Tamil Quiz" },
       { name: "English Debate" },
-      { name: "English Extempore" },
+      { name: "English JAM" },
       { name: "English Creative Writing" },
       { name: "Flash Fiction" },
       { name: "Block & Tackle" },
@@ -133,6 +132,7 @@ const eventCategories = [
       { name: "Trailer Making" },
       { name: "Book Cover Designing" },
       { name: "Movie Frame Recreation" },
+      { name: "Meme" },
     ]
   },
 ];
