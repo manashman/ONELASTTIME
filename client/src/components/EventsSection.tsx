@@ -17,7 +17,7 @@ import { Badge } from "@/components/ui/badge";
 const events = [
   {
     id: 1,
-    name: "Symphony of Stars",
+    name: "Battle of Bands",
     category: "Music",
     description: "Battle of bands, solo performances, and orchestral showcases that will resonate through the cosmos.",
     icon: Music,
@@ -25,7 +25,7 @@ const events = [
   },
   {
     id: 2,
-    name: "Celestial Dance",
+    name: "Western Group Dance",
     category: "Dance",
     description: "Classical, contemporary, and fusion dance competitions that defy gravity and inspire awe.",
     icon: Mic2,
@@ -33,23 +33,23 @@ const events = [
   },
   {
     id: 3,
-    name: "Nebula Art",
+    name: "Shipwreck",
     category: "Art",
-    description: "Painting, sketching, and digital art competitions that bring celestial visions to life.",
+    description: "Can you survive a sinking ship with the only life jacket left?",
     icon: Palette,
     color: "from-pink-500 to-orange-500",
   },
   {
     id: 4,
-    name: "Theatre Odyssey",
-    category: "Drama",
+    name: "Variety",
+    category: "Theatre Arts",
     description: "Theatrical performances and street plays that take you on interstellar adventures.",
     icon: Drama,
     color: "from-red-500 to-yellow-500",
   },
   {
     id: 5,
-    name: "Cosmic Words",
+    name: "Literary Events",
     category: "Literary",
     description: "Poetry, creative writing, and debate competitions for the wordsmiths of the universe.",
     icon: PenTool,
@@ -57,27 +57,11 @@ const events = [
   },
   {
     id: 6,
-    name: "Stellar Lens",
+    name: "Pictures that Speak",
     category: "Photography",
     description: "Capture the beauty of the cosmos through your lens in our photography contest.",
     icon: Camera,
     color: "from-indigo-500 to-purple-500",
-  },
-  {
-    id: 7,
-    name: "Pixel Galaxy",
-    category: "Gaming",
-    description: "E-sports tournaments and gaming competitions that test your reflexes across digital universes.",
-    icon: Gamepad2,
-    color: "from-cyan-500 to-blue-500",
-  },
-  {
-    id: 8,
-    name: "Code Cosmos",
-    category: "Technical",
-    description: "Hackathons, coding challenges, and tech competitions for the engineers of tomorrow.",
-    icon: Code,
-    color: "from-violet-500 to-purple-500",
   },
 ];
 
