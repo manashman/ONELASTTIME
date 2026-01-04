@@ -29,17 +29,20 @@ export function AboutSection() {
               About Pradharshini
             </span>
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-              <span className="gradient-cosmic-text">Where Culture Thrives</span>
+              <span className="gradient-cosmic-text">Ready to traverse the infinite flux of time?</span>
             </h2>
             <div className="space-y-4 text-muted-foreground text-base md:text-lg leading-relaxed">
-              <p>
-                Conducted by Government Kilpauk Medical College (GKMC), Pradharshini is an intercollegiate cultural extravaganza where versatile talents converge to illustrate their flair.
+              <p> At The Confluence of Past, Present, and Possibility, Pradharshini Emerges
               </p>
               <p>
-                Ever since its inception in 1978, Pradharshini has spread its roots across Tamil Nadu and the rest of the country at large. After a brief hiatus, Pradharshini, the crown jewel of GKMC, returned and has once again risen like a phoenix to its former glory.
+                Between the loops of time, there exists an oasis where the past, the present, and the future converge. A realm unbound by chronology, known only to moments that dare to endure. 
               </p>
               <p>
-                Pradharshini, an exhibition of cultural arts, is one of South India's biggest cultural festivals and is the biggest event conducted by a South Indian medical college. Spanning music shows, variety and choreo nights, fashion parades, and numerous casual contests, it remains a beacon of artistic excellence.
+                What thrives there, even time itself cannot name, for it is shaped by memory, imagination, and the will to create. Pradharshini emerges from this convergence as a living continuum, where expression transcends eras and culture finds new form beyond its origin. 
+              </p>
+                Each performance becomes a passage across centuries, every rhythm an echo carried forward, affirming that art does not obey time, it redefines it. What unfolds here is not merely witnessed; it is absorbed into the timeline, becoming a moment that time will remember long after it has passed.
+              <p>
+                
               </p>
             </div>
 
