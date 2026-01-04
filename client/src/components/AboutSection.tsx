@@ -40,9 +40,8 @@ export function AboutSection() {
               <p>
                 What thrives there, even time itself cannot name, for it is shaped by memory, imagination, and the will to create. Pradharshini emerges from this convergence as a living continuum, where expression transcends eras and culture finds new form beyond its origin. 
               </p>
-                Each performance becomes a passage across centuries, every rhythm an echo carried forward, affirming that art does not obey time, it redefines it. What unfolds here is not merely witnessed; it is absorbed into the timeline, becoming a moment that time will remember long after it has passed.
               <p>
-                
+                Each performance becomes a passage across centuries, every rhythm an echo carried forward, affirming that art does not obey time, it redefines it. What unfolds here is not merely witnessed; it is absorbed into the timeline, becoming a moment that time will remember long after it has passed.
               </p>
             </div>
 
