@@ -11,21 +11,21 @@ import { Button } from "@/components/ui/button";
 const events = [
   {
     title: "Aadukalam",
-    subtitle: "A Celebration of Classical Performing Arts",
+    subtitle: "Nothing Succeeds Like Success",
     description: "Aadukalam is a premier platform dedicated to showcasing the rich heritage of classical Indian performing arts. This event celebrates the traditional art forms including Bharatanatyam, Kuchipudi, Odissi, and other classical dance styles that have been passed down through generations. Aadukalam provides an exquisite stage for dancers and musicians to exhibit their mastery, preserving cultural legacy while inspiring new generations to appreciate and practice these timeless art forms.",
     highlights: [
       "Major Sports",
       "Minor Sports",
       "Indoor Games",
-      "Cultural Heritage Showcase",
-      "Expert Judging Panel",
+      "Sports Quiz",
+      "Athletics",
       "Prizes & Recognition"
     ],
     icon: "🎭"
   },
   {
     title: "Medrenaline",
-    subtitle: "Medical Students' Adrenaline-Pumping Extravaganza",
+    subtitle: "Feel The Rush!",
     description: "Medrenaline is the flagship annual intercollegiate academic extravaganza of the esteemed Kilpauk Medical College (KMC), drawing hundreds of bright medical minds from institutions across Tamil Nadu. Spanning over three vibrant days, Medrenaline is a celebration of medical intellect and curiosity – featuring an array of engaging events that cater to every academic pursuit. From captivating junior and senior quizzes, impassioned medical debates, and sophisticated case and research presentations, to immersive workshops offering unparalleled hands-on experience and elite training under the guidance of seasoned professionals – Medrenaline is a true academic odyssey.",
     highlights: [
       "Medical Debates & Discussions",
