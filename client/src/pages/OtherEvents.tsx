@@ -12,7 +12,7 @@ const events = [
   {
     title: "Aadukalam",
     subtitle: "Nothing Succeeds Like Success",
-    description: "Aadukalam is a premier platform dedicated to showcasing the rich heritage of classical Indian performing arts. This event celebrates the traditional art forms including Bharatanatyam, Kuchipudi, Odissi, and other classical dance styles that have been passed down through generations. Aadukalam provides an exquisite stage for dancers and musicians to exhibit their mastery, preserving cultural legacy while inspiring new generations to appreciate and practice these timeless art forms.",
+    description: "Aadukalam the name says it all... The field where dreams are set, and obstacles are smashed. Where skills triumph, and inexperience is fouled. Where hopes are served and achievements slam dunked. Get ready to witness the adrenaline rush, amidst tactical Yorkers and sternous spikes where we assist you in achieving eternal glory as -the undisputed champions of sport, so sharpen your serves and don't miss this once in a lifetime opportunity to showcase your talent. Act the game and stand a chance to shuttle your way to success! LONG LIVE THE KMCian LEGACY!",
     highlights: [
       "Major Sports",
       "Minor Sports",
