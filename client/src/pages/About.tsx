@@ -240,7 +240,6 @@ function EditionCard({ edition, index }: { edition: typeof editions[0]; index: n
               <h3 className="font-display text-2xl font-bold text-foreground">
                 {edition.year}
               </h3>
-              <p className="text-primary text-sm font-semibold">{edition.title}</p>
             </div>
           </div>
 
