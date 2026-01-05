@@ -44,12 +44,12 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Phone",
-    details: ["Naresh R: +91 8939276895", "Mahashwethha Y: +91 7448833936"],
+    details: ["Rajan SA: +91 8148314805", "Sindhuri R: +91 8148314805"],
   },
 ];
 
 const socialLinks = [
-  { icon: Instagram, href: "https://instagram.com/medrenaline.kmc", label: "Instagram" },
+  { icon: Instagram, href: "https://instagram.com/pradharshini.kmc", label: "Instagram" },
 ];
 
 export function ContactSection() {
