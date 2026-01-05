@@ -14,9 +14,9 @@ const events = [
     subtitle: "A Celebration of Classical Performing Arts",
     description: "Aadukalam is a premier platform dedicated to showcasing the rich heritage of classical Indian performing arts. This event celebrates the traditional art forms including Bharatanatyam, Kuchipudi, Odissi, and other classical dance styles that have been passed down through generations. Aadukalam provides an exquisite stage for dancers and musicians to exhibit their mastery, preserving cultural legacy while inspiring new generations to appreciate and practice these timeless art forms.",
     highlights: [
-      "Classical Dance Competitions",
-      "Instrumental Music Performances",
-      "Traditional Music Recitals",
+      "Major Sports",
+      "Minor Sports",
+      "Indoor Games",
       "Cultural Heritage Showcase",
       "Expert Judging Panel",
       "Prizes & Recognition"
@@ -26,14 +26,14 @@ const events = [
   {
     title: "Medrenaline",
     subtitle: "Medical Students' Adrenaline-Pumping Extravaganza",
-    description: "Medrenaline is the heart-racing, high-energy event designed exclusively for the vibrant medical student community. This unique extravaganza blends the intensity of medical academics with the thrill of performance and competition. From medical debates and case presentations to dramatics and talent showcases, Medrenaline celebrates the multifaceted talents of future healthcare professionals. It's a space where brilliance meets passion, where medical minds unwind through creative expression, and where camaraderie transcends competition.",
+    description: "Medrenaline is the flagship annual intercollegiate academic extravaganza of the esteemed Kilpauk Medical College (KMC), drawing hundreds of bright medical minds from institutions across Tamil Nadu. Spanning over three vibrant days, Medrenaline is a celebration of medical intellect and curiosity – featuring an array of engaging events that cater to every academic pursuit. From captivating junior and senior quizzes, impassioned medical debates, and sophisticated case and research presentations, to immersive workshops offering unparalleled hands-on experience and elite training under the guidance of seasoned professionals – Medrenaline is a true academic odyssey.",
     highlights: [
       "Medical Debates & Discussions",
       "Clinical Case Presentations",
-      "Medical Dramatics",
-      "Talent Showcases",
-      "Networking Opportunities",
-      "Healthcare Innovation Showcase"
+      "Medical Quizzes",
+      "Workshops",
+      "Research Paper Presentations",
+      "Healthcare Innovation"
     ],
     icon: "⚕️"
   }
