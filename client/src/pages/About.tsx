@@ -248,7 +248,7 @@ function EditionCard({ edition, index }: { edition: typeof editions[0]; index: n
             {edition.description}
           </p>
 
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-2 gap-3 mb-6">
             {edition.highlights.map((highlight, idx) => (
               <div
                 key={idx}
@@ -259,6 +259,16 @@ function EditionCard({ edition, index }: { edition: typeof editions[0]; index: n
               </div>
             ))}
           </div>
+
+          <Button 
+            asChild 
+            variant="outline" 
+            className="w-full glass border-primary/30 hover:border-primary/50 hover:bg-primary/10"
+          >
+            <a href="https://www.google.com" target="_blank" rel="noopener noreferrer">
+              Photo Gallery
+            </a>
+          </Button>
         </CardContent>
       </Card>
     </motion.div>
