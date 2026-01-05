@@ -1,13 +1,7 @@
 import { motion } from "framer-motion";
+import jaypeeLogo from "@assets/image_1767617376242.png";
 
-const sponsors = [
-  { name: "Prad", logo: "/favicon.ico" },
-  { name: "Sponsor 2", logo: "/favicon.ico" },
-  { name: "Sponsor 3", logo: "/favicon.ico" },
-  { name: "Sponsor 4", logo: "/favicon.ico" },
-  { name: "Sponsor 5", logo: "/favicon.ico" },
-  { name: "Sponsor 6", logo: "/favicon.ico" },
-];
+const sponsors = Array(10).fill({ name: "Jaypee", logo: jaypeeLogo });
 
 export function SponsorsSection() {
   return (
@@ -26,13 +20,13 @@ export function SponsorsSection() {
             x: {
               repeat: Infinity,
               repeatType: "loop",
-              duration: 20,
+              duration: 30,
               ease: "linear",
             },
           }}
         >
-          {/* First set of sponsors */}
-          {[...sponsors, ...sponsors, ...sponsors, ...sponsors].map((sponsor, index) => (
+          {/* Loop through sponsors with enough duplication for seamless scroll */}
+          {[...sponsors, ...sponsors].map((sponsor, index) => (
             <div
               key={index}
               className="flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100"
@@ -40,7 +34,7 @@ export function SponsorsSection() {
               <img
                 src={sponsor.logo}
                 alt={sponsor.name}
-                className="h-12 md:h-16 w-auto object-contain"
+                className="h-16 md:h-20 w-auto object-contain"
               />
             </div>
           ))}
