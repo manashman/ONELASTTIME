@@ -161,7 +161,7 @@ export default function OtherEvents() {
                   <p className="text-muted-foreground">Aadukalam is out intercollegiate sports event which gathers participants all accross the state for various sports</p>
                 </div>
                 <div className="p-6 rounded-lg bg-background/40 border border-border/30">
-                  <p className="text-2xl font-bold text-primary mb-2">Academice</p>
+                  <p className="text-2xl font-bold text-primary mb-2">Academics</p>
                   <p className="text-muted-foreground">Medrenaline celebrates the diverse talents within the medical community</p>
                 </div>
               </div>
