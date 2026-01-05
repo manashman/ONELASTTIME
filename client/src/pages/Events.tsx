@@ -22,7 +22,7 @@ const eventCategories = [
   {
     id: 1,
     name: "Dance",
-    title: "Temporal Motion",
+    title: "DANCE EVENTS",
     icon: Mic2,
     description: "Classical, contemporary, and fusion dance competitions showcasing movement through time.",
     events: [
@@ -37,7 +37,7 @@ const eventCategories = [
   {
     id: 2,
     name: "Music",
-    title: "Symphony of Time",
+    title: "MUSIC EVENTS",
     icon: Music,
     description: "Battle of bands, solo performances, vocal competitions, and orchestral showcases across multiple eras of music.",
     events: [
@@ -50,7 +50,7 @@ const eventCategories = [
   {
     id: 3,
     name: "Theatre",
-    title: "Theatre Chronicles",
+    title: "THEATRE ARTS",
     icon: Drama,
     description: "Theatrical performances and street plays depicting historical narratives and contemporary stories.",
     events: [
@@ -70,7 +70,7 @@ const eventCategories = [
   {
     id: 4,
     name: "Fashion",
-    title: "Canvas of Ages",
+    title: "FASHION EVENTS",
     icon: Palette,
     description: "Fashion and artistic performances bringing style and creativity to life.",
     events: [
@@ -83,7 +83,7 @@ const eventCategories = [
   {
     id: 5,
     name: "Quiz",
-    title: "Minds of Time",
+    title: "QUIZ EVENTS",
     icon: PenTool,
     description: "Knowledge competitions testing expertise across diverse domains.",
     events: [
@@ -95,7 +95,7 @@ const eventCategories = [
   {
     id: 6,
     name: "Literary",
-    title: "Words Across Time",
+    title: "LITERATURE EVENTS",
     icon: PenTool,
     description: "Poetry, creative writing, debate, and storytelling competitions in Tamil and English.",
     events: [
@@ -118,7 +118,7 @@ const eventCategories = [
   {
     id: 7,
     name: "Online",
-    title: "Digital Arenas",
+    title: "SUBMISSION EVENTS",
     icon: Camera,
     description: "Digital competitions showcasing creativity in photography, film, and design.",
     events: [

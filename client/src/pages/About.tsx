@@ -8,6 +8,8 @@ import { Award, Users, Zap, History, Music, Palette, ChevronLeft, ChevronRight }
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import eventPhoto from "@assets/WhatsApp_Image_2025-12-23_at_16.35.39_1766687243188.jpeg";
+import eventPhoto2 from "@assets/SATZ2625.jpeg";
+import eventPhoto3 from "@assets/NKR00710.jpeg";
 
 const editions = [
   {
@@ -58,9 +60,9 @@ function PhotoGalleryCarousel() {
       description: "Live performances lighting up the stage"
     },
     {
+      image: eventPhoto2,
       title: "Cultural Showcase",
       description: "Diverse talents from across the nation",
-      icon: "🎨"
     },
     {
       title: "Fashion Forward",
@@ -68,9 +70,9 @@ function PhotoGalleryCarousel() {
       icon: "👗"
     },
     {
+      image: eventPhoto3
       title: "Dance Magic",
       description: "Mesmerizing choreography and moves",
-      icon: "💃"
     },
     {
       title: "Musical Notes",
