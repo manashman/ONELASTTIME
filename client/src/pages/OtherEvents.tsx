@@ -87,7 +87,7 @@ function EventCard({ event, index }: { event: typeof events[0]; index: number })
           {/* Button */}
           <Button 
             className="w-full group"
-            onClick={() => window.open("https://google.com", "_blank")}
+            onClick={() => window.open("https://medrenaline.in", "_blank")}
             data-testid={`button-event-link-${index}`}
           >
             Visit Website
@@ -119,13 +119,13 @@ export default function OtherEvents() {
             className="text-center mb-16"
           >
             <span className="text-primary font-display text-sm tracking-widest uppercase mb-4 block">
-              Special Events
+              What are these Events for ?
             </span>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
               <span className="gradient-cosmic-text">Our Other Events</span>
             </h1>
             <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-              Discover our distinctive events that celebrate culture, talent, and community. Each event brings a unique flavor to the Pradharshini experience, showcasing excellence in different domains.
+              Discover our distinctive events that celebrate sports and academics. Each event brings a unique flavor to the Pradharshini experience, showcasing excellence in different domains.
             </p>
           </motion.div>
 
@@ -153,16 +153,16 @@ export default function OtherEvents() {
                 Why These Events Matter
               </h2>
               <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-                Aadukalam and Medrenaline represent the two pillars of Pradharshini—preserving cultural heritage while celebrating the unique talents of our medical community. Together, they create a holistic festival experience that honors tradition and innovation, classical arts and contemporary excellence.
+                Aadukalam and Medrenaline represent the two pillars of Pradharshini— showcasing talents in sports and academics. Together, they create a holistic festival experience that honors tradition and innovation, sport, discipline and courage.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
                 <div className="p-6 rounded-lg bg-background/40 border border-border/30">
-                  <p className="text-2xl font-bold text-primary mb-2">Cultural</p>
-                  <p className="text-muted-foreground">Aadukalam preserves and promotes India's classical artistic traditions</p>
+                  <p className="text-2xl font-bold text-primary mb-2">Sports</p>
+                  <p className="text-muted-foreground">Aadukalam is out intercollegiate sports event which gathers participants all accross the state for various sports</p>
                 </div>
                 <div className="p-6 rounded-lg bg-background/40 border border-border/30">
-                  <p className="text-2xl font-bold text-primary mb-2">Community</p>
-                  <p className="text-muted-foreground">Medrenaline celebrates the diverse talents within the medical fraternity</p>
+                  <p className="text-2xl font-bold text-primary mb-2">Academice</p>
+                  <p className="text-muted-foreground">Medrenaline celebrates the diverse talents within the medical community</p>
                 </div>
               </div>
             </div>
