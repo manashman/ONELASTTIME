@@ -70,7 +70,7 @@ function PhotoGalleryCarousel() {
       icon: "👗"
     },
     {
-      image: eventPhoto3
+      image: eventPhoto3,
       title: "Dance Magic",
       description: "Mesmerizing choreography and moves",
     },
