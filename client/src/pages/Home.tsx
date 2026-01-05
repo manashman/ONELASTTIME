@@ -5,6 +5,7 @@ import { AboutSection } from "@/components/AboutSection";
 import { EventsSection } from "@/components/EventsSection";
 import { VideosSection } from "@/components/VideosSection";
 import { WhyAttendSection } from "@/components/WhyAttendSection";
+import { SponsorsSection } from "@/components/SponsorsSection";
 import { Footer } from "@/components/Footer";
 
 export default function Home() {
@@ -22,6 +23,7 @@ export default function Home() {
         <AboutSection />
         <VideosSection />
         <EventsSection />
+        <SponsorsSection />
       </main>
       
       {/* Footer */}
