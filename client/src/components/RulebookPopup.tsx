@@ -34,13 +34,13 @@ export function RulebookPopup() {
         </DialogHeader>
         <div className="flex flex-col items-center gap-6 py-4">
           <p className="text-center text-gray-300 font-inter">
-            The official rulebook for Pradharshini 25 is now available. 
+            The official rulebook for Pradharshini 26 is now available. 
             Check out the guidelines for all events and prepare to shine!
           </p>
           <Button 
             className="w-full bg-primary hover:bg-primary/90 text-white font-orbitron"
             onClick={() => {
-              window.open("/attached_assets/PRADHARSHINI'24 RULEBOOK_1764269238394.pdf", "_blank");
+              window.open("https://drive.google.com/file/d/10fJP6hk52y7CPE9OGa0warTqvKMEVl6W/view?usp=drivesdk", "_blank");
               setIsOpen(false);
             }}
           >
