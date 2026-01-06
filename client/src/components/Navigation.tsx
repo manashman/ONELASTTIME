@@ -89,7 +89,7 @@ export function Navigation() {
                 className="ml-4 font-display text-xs tracking-wider"
                 onClick={() =>
                   window.open(
-                    "https://drive.google.com/file/d/10d520nYkXtySwXjTiLEhFBtOwXx46arC/view?usp=sharing",
+                    "https://drive.google.com/file/d/10fJP6hk52y7CPE9OGa0warTqvKMEVl6W/view?usp=drivesdk",
                     "_blank",
                   )
                 }

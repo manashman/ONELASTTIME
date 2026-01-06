@@ -274,7 +274,7 @@ export function HeroSection() {
               size="lg" 
               variant="outline"
               className="font-display text-sm tracking-wider px-8 glass border-primary/30 hover:border-primary/50 relative"
-              onClick={() => window.open("https://drive.google.com/file/d/10d520nYkXtySwXjTiLEhFBtOwXx46arC/view?usp=sharing", "_blank")}
+              onClick={() => window.open("https://drive.google.com/file/d/10fJP6hk52y7CPE9OGa0warTqvKMEVl6W/view?usp=drivesdk", "_blank")}
               data-testid="hero-rulebook-button"
             >
               RULE BOOK
