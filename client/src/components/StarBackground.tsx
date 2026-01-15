@@ -22,10 +22,19 @@ export function StarBackground() {
   const [particles, setParticles] = useState<TimeParticle[]>([]);
   const [ripples, setRipples] = useState<TimeRipple[]>([]);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   // Generate time particles
   useEffect(() => {
-    const isMobile = window.innerWidth < 768;
     const particleCount = isMobile ? 15 : 40;
     const generatedParticles: TimeParticle[] = [];
     for (let i = 0; i < particleCount; i++) {
@@ -40,11 +49,10 @@ export function StarBackground() {
       });
     }
     setParticles(generatedParticles);
-  }, []);
+  }, [isMobile]);
 
   // Create ripples from random positions - Disabled on mobile for performance
   useEffect(() => {
-    const isMobile = window.innerWidth < 768;
     if (isMobile) return;
 
     const interval = setInterval(() => {
@@ -62,17 +70,18 @@ export function StarBackground() {
     }, 4000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [isMobile]);
 
   // Track mouse position for interactive effects
   useEffect(() => {
+    if (isMobile) return;
     const handleMouseMove = (e: MouseEvent) => {
       setMousePos({ x: e.clientX, y: e.clientY });
     };
 
     window.addEventListener("mousemove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
+  }, [isMobile]);
 
   return (
     <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
@@ -80,17 +89,19 @@ export function StarBackground() {
       <div className="absolute inset-0 bg-gradient-to-br from-[hsl(30,25%,7%)] via-[hsl(260,20%,10%)] to-[hsl(30,20%,9%)]" />
 
       {/* Central time vortex - interactive with mouse */}
-      <motion.div
-        className="absolute w-[1000px] h-[1000px] rounded-full opacity-25"
-        style={{
-          background:
-            "radial-gradient(circle, hsl(40 85% 55% / 0.4) 0%, hsl(260 40% 50% / 0.2) 30%, transparent 70%)",
-          filter: "blur(80px)",
-          left: mousePos.x - 500,
-          top: mousePos.y - 500,
-        }}
-        transition={{ type: "spring", stiffness: 30, damping: 20 }}
-      />
+      {!isMobile && (
+        <motion.div
+          className="absolute w-[1000px] h-[1000px] rounded-full opacity-25"
+          style={{
+            background:
+              "radial-gradient(circle, hsl(40 85% 55% / 0.4) 0%, hsl(260 40% 50% / 0.2) 30%, transparent 70%)",
+            filter: "blur(80px)",
+            left: mousePos.x - 500,
+            top: mousePos.y - 500,
+          }}
+          transition={{ type: "spring", stiffness: 30, damping: 20 }}
+        />
+      )}
 
       {/* Temporal distortion fields */}
       <motion.div
@@ -100,7 +111,7 @@ export function StarBackground() {
             "radial-gradient(circle, hsl(260 50% 45% / 0.3) 0%, transparent 70%)",
           filter: "blur(120px)",
         }}
-        animate={{
+        animate={isMobile ? {} : {
           scale: [1, 1.2, 1],
           opacity: [0.18, 0.28, 0.18],
         }}
@@ -114,7 +125,7 @@ export function StarBackground() {
             "radial-gradient(circle, hsl(40 80% 55% / 0.25) 0%, transparent 70%)",
           filter: "blur(100px)",
         }}
-        animate={{
+        animate={isMobile ? {} : {
           scale: [1, 1.15, 1],
           opacity: [0.12, 0.2, 0.12],
         }}
@@ -177,107 +188,78 @@ export function StarBackground() {
           className="absolute inset-0 w-full h-full opacity-20"
           style={{ pointerEvents: "none" }}
         >
-        {/* Large outer gear - 15% from left, 20% from top */}
-        <g>
-          <motion.g
-            animate={{ rotate: 360 }}
-            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-            style={{ transformOrigin: "15% 20%", originX: "15%", originY: "20%" }}
-          >
-            <circle cx="15%" cy="20%" r="120" fill="none" stroke="hsl(40 80% 55%)" strokeWidth="2" opacity="0.4" />
-            <circle cx="15%" cy="20%" r="100" fill="none" stroke="hsl(40 80% 55%)" strokeWidth="1" opacity="0.2" />
-            {Array.from({ length: 12 }).map((_, i) => {
-              const angle = (i / 12) * Math.PI * 2;
-              const x1 = 15 + 120 * Math.cos(angle);
-              const y1 = 20 + 120 * Math.sin(angle);
-              const x2 = 15 + 100 * Math.cos(angle);
-              const y2 = 20 + 100 * Math.sin(angle);
-              return (
-                <line
-                  key={i}
-                  x1={`${x1}%`}
-                  y1={`${y1}%`}
-                  x2={`${x2}%`}
-                  y2={`${y2}%`}
-                  stroke="hsl(40 80% 55%)"
-                  strokeWidth="1.5"
-                  opacity="0.3"
-                />
-              );
-            })}
-          </motion.g>
-        </g>
-
-        {/* Smaller gear - 85% from left, 75% from top */}
-        <g>
-          <motion.g
-            animate={{ rotate: -360 }}
-            transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-            style={{ transformOrigin: "85% 75%", originX: "85%", originY: "75%" }}
-          >
-            <circle cx="85%" cy="75%" r="100" fill="none" stroke="hsl(260 40% 50%)" strokeWidth="2" opacity="0.4" />
-            <circle cx="85%" cy="75%" r="80" fill="none" stroke="hsl(260 40% 50%)" strokeWidth="1" opacity="0.2" />
-            {Array.from({ length: 10 }).map((_, i) => {
-              const angle = (i / 10) * Math.PI * 2;
-              const x1 = 85 + 100 * Math.cos(angle);
-              const y1 = 75 + 100 * Math.sin(angle);
-              const x2 = 85 + 80 * Math.cos(angle);
-              const y2 = 75 + 80 * Math.sin(angle);
-              return (
-                <line
-                  key={i}
-                  x1={`${x1}%`}
-                  y1={`${y1}%`}
-                  x2={`${x2}%`}
-                  y2={`${y2}%`}
-                  stroke="hsl(260 40% 50%)"
-                  strokeWidth="1.5"
-                  opacity="0.3"
-                />
-              );
-            })}
-          </motion.g>
-        </g>
-
-        {/* Timeline - horizontal time axis */}
-        <line x1="0%" y1="50%" x2="100%" y2="50%" stroke="hsl(40 80% 55%)" strokeWidth="1" opacity="0.2" />
-
-        {/* Time markers along timeline */}
-        {Array.from({ length: 8 }).map((_, i) => {
-          const x = (i / 7) * 100;
-          return (
-            <g key={`marker-${i}`}>
-              <line x1={`${x}%`} y1="47%" x2={`${x}%`} y2="53%" stroke="hsl(40 80% 55%)" strokeWidth="1.5" opacity="0.35" />
-              <text
-                x={`${x}%`}
-                y="58%"
-                textAnchor="middle"
-                fill="hsl(40 80% 55%)"
-                opacity="0.25"
-                fontSize="12"
-                fontFamily="monospace"
-              >
-                {2000 + i * 100}
-              </text>
-            </g>
-          );
-        })}
-
-        {/* Hourglass imagery - subtle sand flowing */}
-        <g opacity="0.1">
-          <path
-            d="M 10 15 L 15 30 L 10 30 Z M 15 15 L 10 30 L 15 30 Z"
-            fill="none"
-            stroke="hsl(35 70% 60%)"
-            strokeWidth="0.5"
-          />
-          <line x1="10" y1="22" x2="15" y2="22" stroke="hsl(35 70% 60%)" strokeWidth="1" opacity="0.5" />
-        </g>
-
-        {/* Connecting lines - showing time flow */}
-        <line x1="15%" y1="20%" x2="50%" y2="50%" stroke="hsl(40 80% 55%)" strokeWidth="0.8" opacity="0.1" />
-        <line x1="85%" y1="75%" x2="50%" y2="50%" stroke="hsl(260 40% 50%)" strokeWidth="0.8" opacity="0.1" />
-      </svg>
+          <g>
+            <motion.g
+              animate={{ rotate: 360 }}
+              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+              style={{ transformOrigin: "15% 20%" }}
+            >
+              <circle cx="15%" cy="20%" r="120" fill="none" stroke="hsl(40 80% 55%)" strokeWidth="2" opacity="0.4" />
+              <circle cx="15%" cy="20%" r="100" fill="none" stroke="hsl(40 80% 55%)" strokeWidth="1" opacity="0.2" />
+              {Array.from({ length: 12 }).map((_, i) => {
+                const angle = (i / 12) * Math.PI * 2;
+                const x1 = 15 + 12 * Math.cos(angle);
+                const y1 = 20 + 12 * Math.sin(angle);
+                const x2 = 15 + 10 * Math.cos(angle);
+                const y2 = 20 + 10 * Math.sin(angle);
+                return (
+                  <line
+                    key={i}
+                    x1={`${x1}%`}
+                    y1={`${y1}%`}
+                    x2={`${x2}%`}
+                    y2={`${y2}%`}
+                    stroke="hsl(40 80% 55%)"
+                    strokeWidth="1.5"
+                    opacity="0.3"
+                  />
+                );
+              })}
+            </motion.g>
+          </g>
+          <g>
+            <motion.g
+              animate={{ rotate: -360 }}
+              transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+              style={{ transformOrigin: "85% 75%" }}
+            >
+              <circle cx="85%" cy="75%" r="100" fill="none" stroke="hsl(260 40% 50%)" strokeWidth="2" opacity="0.4" />
+              <circle cx="85%" cy="75%" r="80" fill="none" stroke="hsl(260 40% 50%)" strokeWidth="1" opacity="0.2" />
+              {Array.from({ length: 10 }).map((_, i) => {
+                const angle = (i / 10) * Math.PI * 2;
+                const x1 = 85 + 10 * Math.cos(angle);
+                const y1 = 75 + 10 * Math.sin(angle);
+                const x2 = 85 + 8 * Math.cos(angle);
+                const y2 = 75 + 8 * Math.sin(angle);
+                return (
+                  <line
+                    key={i}
+                    x1={`${x1}%`}
+                    y1={`${y1}%`}
+                    x2={`${x2}%`}
+                    y2={`${y2}%`}
+                    stroke="hsl(260 40% 50%)"
+                    strokeWidth="1.5"
+                    opacity="0.3"
+                  />
+                );
+              })}
+            </motion.g>
+          </g>
+          <line x1="0%" y1="50%" x2="100%" y2="50%" stroke="hsl(40 80% 55%)" strokeWidth="1" opacity="0.2" />
+          {Array.from({ length: 8 }).map((_, i) => {
+            const x = (i / 7) * 100;
+            return (
+              <g key={`marker-${i}`}>
+                <line x1={`${x}%`} y1="47%" x2={`${x}%`} y2="53%" stroke="hsl(40 80% 55%)" strokeWidth="1.5" opacity="0.35" />
+                <text x={`${x}%`} y="58%" textAnchor="middle" fill="hsl(40 80% 55%)" opacity="0.25" fontSize="12" fontFamily="monospace">
+                  {2000 + i * 100}
+                </text>
+              </g>
+            );
+          })}
+        </svg>
+      )}
 
       {/* Pulsing temporal core at center - static on mobile */}
       <motion.div
