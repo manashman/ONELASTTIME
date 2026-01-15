@@ -63,7 +63,7 @@ export function HeroSection() {
         style={{
           background: "radial-gradient(circle, hsl(35 70% 55% / 0.4) 0%, transparent 70%)",
         }}
-        animate={{ 
+        animate={isMobile ? {} : { 
           y: [0, -25, 0],
           x: [0, -15, 0]
         }}

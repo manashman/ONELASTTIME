@@ -279,7 +279,7 @@ export function StarBackground() {
         <line x1="85%" y1="75%" x2="50%" y2="50%" stroke="hsl(260 40% 50%)" strokeWidth="0.8" opacity="0.1" />
       </svg>
 
-      {/* Pulsing temporal core at center */}
+      {/* Pulsing temporal core at center - static on mobile */}
       <motion.div
         className="absolute top-1/2 left-1/2 w-24 h-24 rounded-full"
         style={{
@@ -288,7 +288,7 @@ export function StarBackground() {
           marginLeft: "-48px",
           marginTop: "-48px",
         }}
-        animate={{
+        animate={isMobile ? { opacity: 0.4 } : {
           scale: [1, 1.3, 1],
           opacity: [0.35, 0.7, 0.35],
         }}
