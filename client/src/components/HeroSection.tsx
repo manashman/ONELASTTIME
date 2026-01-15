@@ -22,33 +22,37 @@ export function HeroSection() {
     const x = e.clientX - rect.left - rect.width / 2;
     const y = e.clientY - rect.top - rect.height / 2;
     
-    mouseX.set(x * 0.05);
-    mouseY.set(y * 0.05);
+    mouseX.set(x * 0.02);
+    mouseY.set(y * 0.02);
     setMousePosition({ x, y });
     setCursorPosition({ x: e.clientX, y: e.clientY });
   };
 
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+
   return (
     <section id="home" className="relative min-h-screen pt-20 md:pt-24 flex items-center justify-center overflow-hidden" onMouseMove={handleMouseMove}>
-      {/* Interactive cursor glow */}
-      <motion.div
-        className="fixed w-80 h-80 rounded-full pointer-events-none opacity-20 blur-3xl"
-        style={{
-          background: "radial-gradient(circle, hsl(40 80% 55% / 0.4) 0%, transparent 70%)",
-          left: cursorPosition.x - 160,
-          top: cursorPosition.y - 160,
-        }}
-        animate={{}}
-        transition={{ type: "spring", stiffness: 50, damping: 20 }}
-      />
+      {/* Interactive cursor glow - Disabled on mobile */}
+      {!isMobile && (
+        <motion.div
+          className="fixed w-80 h-80 rounded-full pointer-events-none opacity-20 blur-3xl"
+          style={{
+            background: "radial-gradient(circle, hsl(40 80% 55% / 0.4) 0%, transparent 70%)",
+            left: cursorPosition.x - 160,
+            top: cursorPosition.y - 160,
+          }}
+          animate={{}}
+          transition={{ type: "spring", stiffness: 50, damping: 20 }}
+        />
+      )}
 
-      {/* Multiple glowing orbs for depth */}
+      {/* Multiple glowing orbs for depth - simplified on mobile */}
       <motion.div
-        className="absolute top-20 right-1/4 w-40 h-40 rounded-full pointer-events-none opacity-15 blur-2xl"
+        className="absolute top-20 right-1/4 w-40 h-40 rounded-full pointer-events-none opacity-10 blur-2xl"
         style={{
           background: "radial-gradient(circle, hsl(260 40% 50% / 0.3) 0%, transparent 70%)",
         }}
-        animate={{ 
+        animate={isMobile ? {} : { 
           y: [0, 30, 0],
           x: [0, 20, 0]
         }}
@@ -116,15 +120,15 @@ export function HeroSection() {
           className="flex items-center justify-center gap-4 mb-6 group"
         >
           <motion.div
-            animate={{ rotate: 360 }}
+            animate={isMobile ? {} : { rotate: 360 }}
             transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
             className="origin-center"
           >
-            <Cog className="w-6 h-6 text-primary animate-glow-pulse" />
+            <Cog className="w-6 h-6 text-primary" />
           </motion.div>
           <motion.span 
-            className="text-sm md:text-base font-medium text-primary tracking-widest uppercase animate-text-glow"
-            whileHover={{ 
+            className="text-sm md:text-base font-medium text-primary tracking-widest uppercase"
+            whileHover={isMobile ? {} : { 
               textShadow: "0 0 12px hsl(40 80% 55% / 0.8), 0 0 24px hsl(260 40% 50% / 0.5)",
               letterSpacing: "0.15em",
               scale: 1.05
@@ -133,11 +137,11 @@ export function HeroSection() {
             Where Glory Beckons
           </motion.span>
           <motion.div
-            animate={{ rotate: -360 }}
+            animate={isMobile ? {} : { rotate: -360 }}
             transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
             className="origin-center"
           >
-            <Cog className="w-6 h-6 text-primary animate-glow-pulse" />
+            <Cog className="w-6 h-6 text-primary" />
           </motion.div>
         </motion.div>
 

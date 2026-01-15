@@ -25,23 +25,28 @@ export function StarBackground() {
 
   // Generate time particles
   useEffect(() => {
+    const isMobile = window.innerWidth < 768;
+    const particleCount = isMobile ? 15 : 40;
     const generatedParticles: TimeParticle[] = [];
-    for (let i = 0; i < 60; i++) {
+    for (let i = 0; i < particleCount; i++) {
       generatedParticles.push({
         id: i,
-        x: Math.random() * 10,
-        y: Math.random() * 10,
-        size: Math.random() * 3 + 1,
-        opacity: Math.random() * 0.5 + 0.1,
+        x: Math.random() * 100,
+        y: Math.random() * 100,
+        size: Math.random() * 2 + 0.5,
+        opacity: Math.random() * 0.3 + 0.1,
         animationDelay: Math.random() * 8,
-        duration: Math.random() * 4 + 6,
+        duration: Math.random() * 4 + 8,
       });
     }
     setParticles(generatedParticles);
   }, []);
 
-  // Create ripples from random positions
+  // Create ripples from random positions - Disabled on mobile for performance
   useEffect(() => {
+    const isMobile = window.innerWidth < 768;
+    if (isMobile) return;
+
     const interval = setInterval(() => {
       const newRipple: TimeRipple = {
         id: Date.now(),
@@ -127,9 +132,11 @@ export function StarBackground() {
             width: particle.size,
             height: particle.size,
             background: `hsl(${60 + Math.random() * 20} 80% 55%)`,
-            boxShadow: `0 0 ${particle.size * 4}px hsl(40 80% 55% / 0.5)`,
+            boxShadow: particle.size > 1 ? `0 0 ${particle.size * 4}px hsl(40 80% 55% / 0.5)` : 'none',
           }}
-          animate={{
+          animate={isMobile ? {
+            opacity: [particle.opacity, particle.opacity * 0.5, particle.opacity],
+          } : {
             y: [0, -300, 0],
             x: [0, Math.random() * 100 - 50, 0],
             opacity: [particle.opacity, particle.opacity * 0.5, particle.opacity],
@@ -164,11 +171,12 @@ export function StarBackground() {
         />
       ))}
 
-      {/* Rotating clock mechanism - gears */}
-      <svg
-        className="absolute inset-0 w-full h-full opacity-20"
-        style={{ pointerEvents: "none" }}
-      >
+      {/* Rotating clock mechanism - gears - Disabled on mobile */}
+      {!isMobile && (
+        <svg
+          className="absolute inset-0 w-full h-full opacity-20"
+          style={{ pointerEvents: "none" }}
+        >
         {/* Large outer gear - 15% from left, 20% from top */}
         <g>
           <motion.g

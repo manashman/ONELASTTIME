@@ -29,7 +29,7 @@ export function SponsorsSection() {
           {[...sponsors, ...sponsors].map((sponsor, index) => (
             <div
               key={index}
-              className="flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100"
+              className="flex items-center justify-center grayscale-0 opacity-80 hover:opacity-100 transition-all duration-300"
             >
               <img
                 src={sponsor.logo}
